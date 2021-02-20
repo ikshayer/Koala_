@@ -2,7 +2,7 @@ const ms = require('ms');
 module.exports = {
     name: 'spam',
     description: "We can use this to spam a user's dm!",
-    async execute(message, args){
+    async execute(client, message, args){
 
         if(message.member.permissions.has("ADMINISTRATOR")){
 

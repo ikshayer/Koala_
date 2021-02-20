@@ -1,7 +1,7 @@
 module.exports = {
 name: 'ping',
 description: 'Literally says E',
-execute(message, args){
+execute(client, message, args){
 
     if(message.member.permissions.has("MANAGE_MESSAGES")){
         message.channel.send("You can **mute** members :)");

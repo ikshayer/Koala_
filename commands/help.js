@@ -1,7 +1,7 @@
 module.exports = {
     name: 'help',
     description: 'The Main Help Center',
-    execute(message, args, Discord){
+    execute(client, message, args, Discord){
 
         if(!args[0]){
 

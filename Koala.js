@@ -1,17 +1,18 @@
-const fs = require('fs');
 const Discord = require('discord.js');
 const token = 'ODA5NDM2Nzk4Mjk5Mjc1MzU1.YCVEww.n_EBBzYeWKZxEEH7tNiylbZOfGA'
-const client = new Discord.Client(); 
-const prefix = '~';
-
-
-
-// ['command_handler', 'event_handler'].forEach(handler =>{
-//    require(`./handlers/${handler}`)(client, Discord)
-// })
+const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]}); 
 
 
 client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
+
+ ['command_handler', 'event_handler'].forEach(handler =>{
+    require(`./handlers/${handler}`)(client, Discord);
+ })
+
+/*
+client.commands = new Discord.Collection();
+
 let memberCounter = require('./counter/member-counter');
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -105,6 +106,8 @@ client.on('message', message=>{                                                 
 
 
 });
+
+*/
 
 client.on('message', message =>{
     if(message.author.id == ''){

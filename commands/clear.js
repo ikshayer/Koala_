@@ -1,7 +1,7 @@
 module.exports = {
     name: 'clear',
     description: 'message clear',
-    async execute(message, args){
+    async execute(client, message, args){
 
         if(message.member.permissions.has("MANAGE_MESSAGES")){
             

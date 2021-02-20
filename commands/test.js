@@ -1,7 +1,7 @@
 module.exports = {
     name: 'test',
     description: 'test',
-    execute(message, args){
+    execute(client, message, args){
 
         const memberCount = Guild.approximateMemberCount
         

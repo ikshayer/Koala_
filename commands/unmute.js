@@ -1,7 +1,7 @@
 module.exports = {
     name: 'unmute',
     description: 'The Unmute Command',
-    execute(message, args){
+    execute(client, message, args){
 
         const target = message.mentions.users.first();
 
