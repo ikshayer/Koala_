@@ -2,18 +2,24 @@ module.exports = {
     name: 'status',
     description: 'You can set up status, POG',
     execute(client, message, args){
+
+        const content = message.content.replace('~status', '');
     
-        if(!args[0]){
-            message.channel.send("Please state a status to give");
-        }
-        if(args[0]){
+    if(!content){
+    message.channel.send("Please state a status to give");
+    }
+    
+    if(content){
+
          client.user.setPresence({
          activity: {
-            name: args[0],
+            name: content,
             type: 0,
          }
+        });
+    }
 
-         });
-        }
+
+         
     }
 }

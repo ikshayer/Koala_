@@ -38,7 +38,7 @@ client.on('message', message=>{
 
 client.on('message', message=>{                                               //Hello reply
     if(message.content.toLowerCase() === "hello"){
-        message.channel.send('shut up loser');
+        message.channel.send('shut up loser', {tts: true});
     }
 })
 
