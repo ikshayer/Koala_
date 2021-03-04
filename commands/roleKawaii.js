@@ -1,4 +1,5 @@
 module.exports = {
+    aliases: ['r'],
     name: 'role',
     description: "You get the kawaii role, pretty epic",
     execute(client, message, args){

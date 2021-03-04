@@ -10,31 +10,18 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
  })
 
-
-
-
-
-
-
-
-client.on('message', message =>{
-    if(message.author.id == ''){
-        message.delete(),
-        message.channel.send("Takla tried to speak but sadly failed!");
-    }
-})
-
-client.on('message', message=>{
+ client.on('message', message=>{
     if(message.content.toLowerCase() === "koala is bad"){                             //"koala is bad" reply
         message.author.send('I will fucking kill you :)');
     }
 })
-    
+
 client.on('message', message=>{
     if(message.content.toLowerCase() === "shitty bot"){
         message.channel.send('fuck you bitchass');
     }
 })
+
 
 client.on('message', message=>{                                               //Hello reply
     if(message.content.toLowerCase() === "hello"){
@@ -54,18 +41,9 @@ client.on('message', message=>{                                              //O
     }
 })
 
-
-
-
-
-
-
-
-
-
 client.login(token);
 
 
 
 
-// client.login(process.env.DJS_TOKEN);
+// client.login(process.env.DJS_TOKEN)

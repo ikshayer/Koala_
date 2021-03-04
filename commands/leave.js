@@ -1,6 +1,6 @@
 module.exports = {
 
-
+    aliases: ['exit', 'l'],
     name: 'leave',
     description: 'The Command for the Bot to leave the Voice Channel',
     async execute(client, message, args){

@@ -2,6 +2,7 @@ const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
 
 module.exports = {
+    aliases: ['p', 'pl'],
     name: 'play',
     description: 'Joins and plays a video from Youtube',
     async execute(client, message, args){

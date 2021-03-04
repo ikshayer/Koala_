@@ -1,5 +1,6 @@
 const ms = require('ms')
 module.exports = {
+    aliases: ['reminder', 'remember'],
     name: 'remind',
     description: 'you get reminded of something!',
     async execute(client, message, args, Discord){
