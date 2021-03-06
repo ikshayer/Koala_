@@ -40,6 +40,11 @@ client.on('message', message=>{                                              //O
         message.channel.send('Onion');
     }
 })
+client.on('message', message =>{
+    if(message.content.toLowerCase() === "thx koala" || message.content.toLowerCase() === 'thanks koala' || message.content.toLowerCase() === "thank you koala"){
+        message.channel.send("B-baka! :flushed:");
+    }
+})
 
 client.login(token);
 
