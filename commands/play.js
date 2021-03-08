@@ -6,7 +6,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop'], //We are using aliases to run the skip and stop command follow this tutorial if lost: https://www.youtube.com/watch?v=QBUJ3cdofqc
+    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop'], //We are using aliases to run the skip and stop command follow this tutorial if lost: https://www.youtube.com/watch?v=QBUJ3cdofqc
     cooldown: 0,
     description: 'Advanced music bot',
     async execute(message,args, cmd, client, Discord){
@@ -53,7 +53,8 @@ module.exports = {
                     voice_channel: voice_channel,
                     text_channel: message.channel,
                     connection: null,
-                    songs: []
+                    songs: [],
+                    loop: false,
                 }
                 
                 //Add our key and value pair into the global queue. We then use this to get our server queue.
@@ -81,6 +82,27 @@ module.exports = {
             stop_song(message, server_queue);
             await message.channel.send("Leaving the voice channel...");
         }
+        //Pause command
+        else if(cmd === "pause"){
+         if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");//Checks if the song is already paused.
+         server_queue.connection.dispatcher.pause();//If the song isn't paused this will pause it.
+         message.channel.send("Paused the song!");//Sends a message to the channel the command was used in after it pauses.
+        }
+  
+        //Unpause command
+        else if(cmd === "unpause"){
+        if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");//Checks if the song isn't paused.
+         server_queue.connection.dispatcher.resume();//If the song is paused this will unpause it.
+         message.channel.send("Unpaused the song!");//Sends a message to the channel the command was used in after it unpauses.
+         }
+         else if(cmd === 'loop'){
+             if(!message.member.voice.channel) return message.channel.send("You need to be in a voice channel to perform this command!")
+             if(!server_queue) return message.channel.send('There is nothing playing');
+
+             server_queue.loop = !server_queue.loop
+             return message.channel.send(`I have now ${server_queue.loop ? `**Enabled**` : `**Disabled**`} loop.`)
+
+         }
     }
     
 }
@@ -97,7 +119,7 @@ const video_player = async (guild, song) => {
     const stream = ytdl(song.url, { filter: 'audioonly' });
     song_queue.connection.play(stream, { seek: 0, volume: 0.5 })
     .on('finish', () => {
-        song_queue.songs.shift();
+        if(!song_queue.loop) song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     });
     await song_queue.text_channel.send(`🎶 Now playing **${song.title}**`)
