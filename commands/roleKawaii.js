@@ -1,8 +1,8 @@
 module.exports = {
-    aliases: ['r'],
     name: 'role',
+    aliases: ['r'],
     description: "You get the kawaii role, pretty epic",
-    execute(client, message, args){
+    execute(message, args, cmd, client){
 
         if(args[0].toLowerCase() === 'kawaii'){
         if(message.member.roles.cache.has('540478109238165505')){

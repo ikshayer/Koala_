@@ -38,7 +38,7 @@ setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
 
 
 try{
-command.execute(client, message, args, Discord);
+command.execute(message, args, cmd, client, Discord);
 }
 catch (err){
     message.reply("There was an error in executing the code");

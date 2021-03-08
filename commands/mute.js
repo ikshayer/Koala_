@@ -3,7 +3,7 @@ const ms = require('ms');
 module.exports = {
     name: 'mute',
     description: 'The Mute Command',
-    execute(client, message, args){
+    execute(message, args, cmd, client){
 
         const target = message.mentions.users.first();
         

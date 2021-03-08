@@ -10,6 +10,17 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
  })
 
+
+ client.on('ready', () => {
+    client.user.setPresence({
+        status: "dnd",  // You can show online, idle... Do not disturb is dnd
+
+
+    });
+    client.user.setActivity("Women Are FAKE | ~help", { type: 'WATCHING' })
+
+ })
+
  client.on('message', message=>{
     if(message.content.toLowerCase() === "koala is bad"){                             //"koala is bad" reply
         message.author.send('I will fucking kill you :)');

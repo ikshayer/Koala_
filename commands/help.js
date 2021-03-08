@@ -1,8 +1,8 @@
 module.exports = {
-    aliases: ['commands', 'command', 'h'],
     name: 'help',
+    aliases: ['commands', 'command', 'h'],
     description: 'The Main Help Center',
-    execute(client, message, args, Discord){
+    execute(message, args, cmd, client, Discord){
 
         if(!args[0]){
 
