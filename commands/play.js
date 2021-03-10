@@ -1,5 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
+const Discord = require('discord.js')
 
 //Global queue for your bot. Every server will have a key and value pair in this map. { guild.id, queue_constructor{} }
 const queue = new Map();
@@ -24,13 +25,26 @@ module.exports = {
 
         //If the user has used the play command
         if (cmd === 'play'){
-            if (!args.length) return message.channel.send('You need to send the second argument!');
+            if (!args.length) {
+            const playfailEmbed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setDescription('Please enter the song name or a few keywords to find the song')
+
+            return message.channel.send(playfailEmbed);
+        
+        }
             let song = {};
 
             //If the first argument is a link. Set the song object to have two keys. Title and URl.
             if (ytdl.validateURL(args[0])) {
                 const song_info = await ytdl.getInfo(args[0]);
-                song = { title: song_info.videoDetails.title, url: song_info.videoDetails.video_url }
+                song = { 
+                    title: song_info.videoDetails.title, 
+                    url: song_info.videoDetails.video_url, 
+                    thumbnail: song_info.videoDetails.thumbnails
+                    
+                }
+
             } else {
                 //If there was no link, we use keywords to search for a video. Set the song object to have two keys. Title and URl.
                 const video_finder = async (query) =>{
@@ -40,7 +54,15 @@ module.exports = {
 
                 const video = await video_finder(args.join(' '));
                 if (video){
-                    song = { title: video.title, url: video.url }
+                    song = { 
+                        title: video.title,
+                        url: video.url,
+                        thumbnail: video.thumbnail,
+                        
+
+                        
+
+                     }
                 } else {
                      message.channel.send('Error finding video.');
                 }
@@ -72,35 +94,61 @@ module.exports = {
                     throw err;
                 }
             } else{
+                const playEmbed = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setAuthor('👍 Added to the Queue', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+                .setTitle(`${song.title}`)
+                .setURL(`${song.url}`)
+                .setThumbnail(`${song.thumbnail}`)
+
                 server_queue.songs.push(song);
-                return message.channel.send(`👍 **${song.title}** added to queue!`);
+
+                return message.channel.send(playEmbed);
             }
         }
 
         else if(cmd === 'skip') skip_song(message, server_queue);
         else if(cmd === 'stop') {
             stop_song(message, server_queue);
-            await message.channel.send("Leaving the voice channel...");
+
+            const stopEmbed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setDescription('See ya next time')
+
+            await message.channel.send(stopEmbed);
         }
         //Pause command
         else if(cmd === "pause"){
          if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");//Checks if the song is already paused.
          server_queue.connection.dispatcher.pause();//If the song isn't paused this will pause it.
-         message.channel.send("Paused the song!");//Sends a message to the channel the command was used in after it pauses.
+
+         const pauseEmbed = new Discord.MessageEmbed()
+         .setColor('RANDOM')
+         .setDescription('The song has now been paused')
+
+         message.channel.send(pauseEmbed);//Sends a message to the channel the command was used in after it pauses.
         }
   
         //Unpause command
         else if(cmd === "unpause"){
         if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");//Checks if the song isn't paused.
          server_queue.connection.dispatcher.resume();//If the song is paused this will unpause it.
-         message.channel.send("Unpaused the song!");//Sends a message to the channel the command was used in after it unpauses.
+
+         const unpauseEmbed = new Discord.MessageEmbed()
+         .setColor('RANDOM')
+         .setDescription('The song has now been resumed!')
+         message.channel.send(unpauseEmbed);//Sends a message to the channel the command was used in after it unpauses.
          }
          else if(cmd === 'loop'){
              if(!message.member.voice.channel) return message.channel.send("You need to be in a voice channel to perform this command!")
              if(!server_queue) return message.channel.send('There is nothing playing');
 
              server_queue.loop = !server_queue.loop
-             return message.channel.send(`I have now ${server_queue.loop ? `**Enabled**` : `**Disabled**`} loop.`)
+
+             const loopEmbed = new Discord.MessageEmbed()
+             .setColor('RANDOM')
+             .setDescription(`Loop is now ${server_queue.loop ? `**Enabled**` : `**Disabled**`}!`)
+             return message.channel.send(loopEmbed);
 
          }
     }
@@ -122,13 +170,27 @@ const video_player = async (guild, song) => {
         if(!song_queue.loop) song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     });
-    await song_queue.text_channel.send(`🎶 Now playing **${song.title}**`)
+
+    const QueueEmbed = new Discord.MessageEmbed()
+    .setColor('RANDOM')
+    .setAuthor('Now Playing', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+    .setTitle(`${song.title}`)
+    .setURL(`${song.url}`)
+    .setThumbnail(`${song.thumbnail}`)
+
+    await song_queue.text_channel.send(QueueEmbed);
+    
 }
 
 const skip_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
     if(!server_queue){
-        return message.channel.send(`There are no songs in queue 😔`);
+
+        const skipfailEmbed = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setDescription('There are no songs in the queue 😔')
+
+        return message.channel.send(skipfailEmbed);
     }
     server_queue.connection.dispatcher.end();
 }
