@@ -26,11 +26,8 @@ module.exports = {
         //If the user has used the play command
         if (cmd === 'play'){
             if (!args.length) {
-            const playfailEmbed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setDescription('Please enter the song name or a few keywords to find the song')
 
-            return message.channel.send(playfailEmbed);
+            return message.channel.send('Please enter the song name or a few keywords to find the song!');
         
         }
             let song = {};
@@ -111,33 +108,22 @@ module.exports = {
         else if(cmd === 'stop') {
             stop_song(message, server_queue);
 
-            const stopEmbed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setDescription('See ya next time')
-
-            await message.channel.send(stopEmbed);
+            await message.channel.send('See ya next time!');
         }
         //Pause command
         else if(cmd === "pause"){
          if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");//Checks if the song is already paused.
          server_queue.connection.dispatcher.pause();//If the song isn't paused this will pause it.
 
-         const pauseEmbed = new Discord.MessageEmbed()
-         .setColor('RANDOM')
-         .setDescription('The song has now been paused')
-
-         message.channel.send(pauseEmbed);//Sends a message to the channel the command was used in after it pauses.
+         message.channel.send('The song has now been paused');//Sends a message to the channel the command was used in after it pauses.
         }
   
         //Unpause command
         else if(cmd === "unpause"){
-        if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");//Checks if the song isn't paused.
-         server_queue.connection.dispatcher.resume();//If the song is paused this will unpause it.
+        if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");    //Checks if the song isn't paused.
+         server_queue.connection.dispatcher.resume();      //If the song is paused this will unpause it.
 
-         const unpauseEmbed = new Discord.MessageEmbed()
-         .setColor('RANDOM')
-         .setDescription('The song has now been resumed!')
-         message.channel.send(unpauseEmbed);//Sends a message to the channel the command was used in after it unpauses.
+         message.channel.send('The song has now been resumed!');      //Sends a message to the channel the command was used in after it unpauses.
          }
          else if(cmd === 'loop'){
              if(!message.member.voice.channel) return message.channel.send("You need to be in a voice channel to perform this command!")
@@ -145,10 +131,7 @@ module.exports = {
 
              server_queue.loop = !server_queue.loop
 
-             const loopEmbed = new Discord.MessageEmbed()
-             .setColor('RANDOM')
-             .setDescription(`Loop is now ${server_queue.loop ? `**Enabled**` : `**Disabled**`}!`)
-             return message.channel.send(loopEmbed);
+             return message.channel.send(`Loop is now ${server_queue.loop ? `**Enabled**` : `**Disabled**`}!`);
 
          }
     }
@@ -186,11 +169,7 @@ const skip_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
     if(!server_queue){
 
-        const skipfailEmbed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setDescription('There are no songs in the queue 😔')
-
-        return message.channel.send(skipfailEmbed);
+        return message.channel.send('There are no songs in the queue 😔');
     }
     server_queue.connection.dispatcher.end();
 }
