@@ -14,7 +14,7 @@ module.exports = {
          message.channel.send("The User is currently being spammed!");
 
              spamInterval = setInterval(() => {
-             memberTarget.send("E!");
+             memberTarget.send("https://tenor.com/view/rick-astley-rick-roll-dancing-dance-moves-gif-14097983");
  
              }, 1000);
 
