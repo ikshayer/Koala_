@@ -1,7 +1,7 @@
-
+require('dotenv').config();
 const cooldowns = new Map();
 module.exports = (Discord, client, message)=>  {
-const prefix = '~';
+const prefix = process.env.PREFIX;
 
 
 

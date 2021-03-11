@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
-const token = 'ODA5NDM2Nzk4Mjk5Mjc1MzU1.YCVEww.n_EBBzYeWKZxEEH7tNiylbZOfGA'
+require('dotenv').config();
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]}); 
+const mongoose = require('mongoose');
+
+const MONGODB_SRV = 'mongodb+srv://Onion:rjcock123@koala.r4i6b.mongodb.net/KoalaDB?retryWrites=true&w=majority';
 
 
 client.commands = new Discord.Collection();
@@ -11,7 +14,7 @@ client.events = new Discord.Collection();
  })
 
 
- client.on('ready', () => {
+client.on('ready', () => {
     client.user.setPresence({
         status: "dnd",  // You can show online, idle... Do not disturb is dnd
 
@@ -57,7 +60,20 @@ client.on('message', message =>{
     }
 })
 
-client.login(token);
+mongoose.connect(process.env.MONGODB_SRV, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+
+}).then (() =>{
+    console.log('Connected to the Database!');
+
+}).catch((err) =>{
+    console.log(err)
+
+});
+
+client.login(process.env.DISCORD_TOKEN);
 
 
 
