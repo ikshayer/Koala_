@@ -3,9 +3,6 @@ require('dotenv').config();
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]}); 
 const mongoose = require('mongoose');
 
-const MONGODB_SRV = 'mongodb+srv://Onion:rjcock123@koala.r4i6b.mongodb.net/KoalaDB?retryWrites=true&w=majority';
-
-
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
