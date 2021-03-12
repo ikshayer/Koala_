@@ -12,7 +12,7 @@ module.exports = {
         if(!amount) return message.channel.send('Please provide an amount to withdraw!')
         if(amount <= 0) return message.channel.send('Please enter an amount more than 0')
         if (amount % 1 != 0) return message.channel.send("Withdraw amount must be a whole number");
-        if (amount > profileData.bank) return message.channel.send(`You don't have that amount of coins to withdraw`);
+        if (amount > profileData.bank) return message.channel.send(`You don't have that amount of Koins to withdraw`);
 
         const response = await profileModel.findOneAndUpdate(
             {

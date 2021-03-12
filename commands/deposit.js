@@ -12,7 +12,7 @@ module.exports = {
         if(!amount) return message.channel.send('Please provide an amount to deposit!')
         if(amount <= 0) return message.channel.send('Please enter an amount more than 0')
         if (amount % 1 != 0) return message.channel.send("Deposit amount must be a whole number");
-        if (amount > profileData.Koins) return message.channel.send(`You don't have that amount of coins to deposit`);
+        if (amount > profileData.Koins) return message.channel.send(`You don't have that amount of Koins to deposit`);
 
         const response = await profileModel.findOneAndUpdate(
             {
