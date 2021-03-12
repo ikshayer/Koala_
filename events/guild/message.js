@@ -22,6 +22,12 @@ try{
     
         });
         profile.save();
+
+        message.channel.send('Oh hey! Seems like this is your first command, let me quickly scribble you on my notebook!')
+
+        return
+
+    
     }
 
 } catch(err){
