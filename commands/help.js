@@ -46,9 +46,6 @@ module.exports = {
         .setColor('RANDOM')
 
         .setAuthor('Moderation Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
-    
-        .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810778087339327488/hammer.png')
-    
       
         .addFields(
             {name: '`~clear <value>`', value:'Use this to clear a set of messages!'},

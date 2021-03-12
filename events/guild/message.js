@@ -5,6 +5,7 @@ module.exports = async (Discord, client, message)=>  {
 const prefix = process.env.PREFIX;
 
 
+if(message.channel.type == 'dm') return
 
 if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -15,7 +16,7 @@ try{
         let profile = await profileModel.create({
             userID: message.author.id,
             serverID: message.guild.id,
-            Geo: 1000,
+            Koins: 1000,
             bank: 0,
     
     
@@ -48,7 +49,7 @@ if(time_stamps.has(message.author.id)){
 
      if(current_time < expiration_time){
      const time_left = (expiration_time - current_time) / 1000;
-     return message.reply(`You have ${time_left.toFixed(1)} seconds left before you can perform ${command.name} again!`);
+     return message.reply(`You have ${time_left.toFixed(1)} seconds left before you can do **~${command.name}** again!`);
  
 }
 }
@@ -58,7 +59,7 @@ setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
 
 
 try{
-command.execute(message, args, cmd, client, Discord);
+command.execute(message, args, cmd, client, Discord, profileData);
 }
 catch (err){
     message.reply("There was an error in executing the code");
