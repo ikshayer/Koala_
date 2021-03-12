@@ -4,12 +4,14 @@ module.exports = {
     description: "We can use this to spam a user's dm!",
     async execute(message, args, cmd, client){
 
-        if(message.member.permissions.has("ADMINISTRATOR")){
+        ownerID = '483181020451962880'
+
+        if(message.author.id == ownerID){
 
          const target = message.mentions.users.first();
          const memberTarget = message.guild.members.cache.get(target.id);
 
-         if(args[1] <= 30000 ){
+         
 
          message.channel.send("The User is currently being spammed!");
 
@@ -25,12 +27,7 @@ module.exports = {
 
          }
          else{
-             message.channel.send("Please enter a value below or equal to 30000 (millisecond)!");
-         }
-
-         }
-         else{
-         message.channel.send("You do not have the sufficient permission!");
+         message.channel.send("This is a master command, only the owner can use it!");
          }
     }
 }
