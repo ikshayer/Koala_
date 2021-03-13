@@ -21,41 +21,6 @@ client.on('ready', () => {
 
  })
 
- client.on('message', message=>{
-    if(message.content.toLowerCase() === "koala is bad"){                             //"koala is bad" reply
-        message.author.send('I will fucking kill you :)');
-    }
-})
-
-client.on('message', message=>{
-    if(message.content.toLowerCase() === "shitty bot"){
-        message.channel.send('fuck you bitchass');
-    }
-})
-
-
-client.on('message', message=>{                                               //Hello reply
-    if(message.content.toLowerCase() === "hello"){
-        message.channel.send('shut up loser', {tts: true});
-    }
-})
-
-client.on('message', message=>{                                              //Takla is retarded reply
-    if(message.content.toLowerCase() === "takla is retarded"){ 
-        message.reply('VERY TRUE');
-    }
-})
- 
-client.on('message', message=>{                                              //Onion Is Hot reply
-    if(message.content.toLowerCase() === "koala, what is hot?"){ 
-        message.channel.send('Onion');
-    }
-})
-client.on('message', message =>{
-    if(message.content.toLowerCase() === "thx koala" || message.content.toLowerCase() === 'thanks koala' || message.content.toLowerCase() === "thank you koala"){
-        message.channel.send("B-baka! :flushed:");
-    }
-})
 
 mongoose.connect(process.env.MONGODB_SRV, {
     useNewUrlParser: true,

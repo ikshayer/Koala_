@@ -7,6 +7,30 @@ const prefix = process.env.PREFIX;
 
 if(message.channel.type == 'dm') return
 
+if(message.content.toLowerCase() === "shitty bot"){
+    return message.channel.send('fuck you bitchass');
+}
+
+if(message.content.toLowerCase() === "koala is bad"){                             //"koala is bad" reply
+        return message.author.send('I will fucking kill you :)');
+    }
+
+if(message.content.toLowerCase() === "hello"){
+    return message.channel.send('shut up loser');
+    }
+
+if(message.content.toLowerCase() === "takla is retarded"){ 
+    return message.reply('VERY TRUE');
+    }
+
+if(message.content.toLowerCase() === "koala, what is hot?"){ 
+    return message.channel.send('Onion');
+    }    
+
+if(message.content.toLowerCase() === "thx koala" || message.content.toLowerCase() === 'thanks koala' || message.content.toLowerCase() === "thank you koala"){
+    return message.channel.send("B-baka! :flushed:");
+    }    
+
 if(!message.content.startsWith(prefix) || message.author.bot) return;
 
 let profileData;
