@@ -58,6 +58,8 @@ try{
     console.log(err);
 }
 
+
+
 let args = message.content.slice(prefix.length).split(/ +/);
 let cmd = args.shift().toLowerCase();
 
