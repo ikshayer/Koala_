@@ -2,7 +2,7 @@ const profileModel = require('../models/profileScheme')
 module.exports = {
     name: 'beg',
     aliases: [],
-    cooldown: 600,
+    cooldown: 120,
     description: 'The Beg command!',
     async execute(message, args, cmd, client, Discord, profileData){
         const randomNumber = Math.floor(Math.random() * 500) + 1;
@@ -20,7 +20,7 @@ module.exports = {
         .setColor('RANDOM')
         .setDescription(`You begged and received ${randomNumber} Koins like a pathetic loser`)
 
-        return message.channel.send(begEmbed);
+        return message.channel.send(`You begged and received **${randomNumber} Koins** like a pathetic loser`);
 
     }
 }

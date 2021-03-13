@@ -4,6 +4,7 @@ const profileschema = new mongoose.Schema({
     serverID: { type: String, require: true},
     Koins: { type: Number, default: 1000},
     bank: { type: Number},
+    greenleaves: { type: Number}
 
 })
 

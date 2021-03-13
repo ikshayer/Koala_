@@ -8,8 +8,25 @@ module.exports = {
 
         
         let amount = args[0]
-        if(isNaN(amount)) return message.channel.send('Please provide a number!')
+
         if(!amount) return message.channel.send('Please provide an amount to deposit!')
+        if(amount === 'all'){
+            const response1 = await profileModel.findOneAndUpdate(
+                {
+                userID: message.author.id
+                },
+                {
+                    $inc: {
+                        Koins: -profileData.Koins,
+                        bank: profileData.Koins,
+                    },
+                });
+                
+                return message.channel.send('All of your money has been deposited to the Bank!')
+
+        }
+        if(isNaN(amount)) return message.channel.send('Please provide a number!')
+        
         if(amount <= 0) return message.channel.send('Please enter an amount more than 0')
         if (amount % 1 != 0) return message.channel.send("Deposit amount must be a whole number");
         if (amount > profileData.Koins) return message.channel.send(`You don't have that amount of Koins to deposit`);
@@ -29,7 +46,7 @@ module.exports = {
             .setColor('RANDOM')
             .setDescription(`${amount} Koins has been deposited to the Bank!`)
 
-            return message.channel.send(WithEmbed);
+            return message.channel.send(`**${amount} Koins** has been deposited to the Bank!`);
 
     }
 }
