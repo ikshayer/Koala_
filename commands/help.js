@@ -19,22 +19,16 @@ module.exports = {
             {name: '**Moderation**', value:'`~help moderation`', inline: true},
             {name: '**Fun**', value:'`~help fun`', inline: true},
             {name: '**Responses**', value:'`~help response`', inline: true},
-
-        
-            
-            
+            {name: '**Music**', value: '`~help music`', inline: true},
+            {name: '**Economy**', value: '`~help economy`', inline: true},
 
         )
          
-
-
         .setTimestamp()
         .setFooter('Koala is always watching you');
 
-
-
         //The Help Embed message send
-        message.channel.send(helpEmbed);
+        return message.channel.send(helpEmbed);
 
         }
         
@@ -65,7 +59,7 @@ module.exports = {
 
 
         //The Help Embed message send
-        message.channel.send(moderationEmbed);
+        return message.channel.send(moderationEmbed);
 
             
 
@@ -79,26 +73,27 @@ module.exports = {
 
         .setAuthor('Fun Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
     
-        .setThumbnail()
+        .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
     
       
         .addFields(
             {name: '`~ossas`', value:'Koala says the hardest African name without stuttering!'},
             {name: '`~sans`', value:'You get a GIF of master Sans (He is so epic OMG)!'},
             {name: '`~role kawaii`', value:'You get the Kawaii role for yourself!'},
+            {name: '`~reminder <time> <text> `', value: "You set up a reminder!"}
 
 
         )
          
 
 
-        .setTimestamp()
+        .setTimestamp('')
         .setFooter('Koala is always watching you!');
 
 
 
         //The Help fun Embed message send
-        message.channel.send(funEmbed);
+        return message.channel.send(funEmbed);
             
             
 
@@ -130,7 +125,7 @@ module.exports = {
 
 
         //The Help Response Embed message send
-        message.channel.send(responseEmbed);
+        return message.channel.send(responseEmbed);
 
             
 
@@ -159,16 +154,47 @@ module.exports = {
 
 
         //The Help Secret Embed message send
-        message.channel.send(secretEmbed);
+        return message.channel.send(secretEmbed);
     
 
+        }
+        if(args[0] === 'music'){
+            const musicEmbed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setAuthor('Music Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+            .addFields(
+                {name: '`~play <video>`', value: '**Play a song in a Music Channel!**'},
+                {name: '`~stop`', value: '**Makes the bot leave the Music Channel!**'},
+                {name: '`~skip`', value: '**Skips the current song!**'},
+                {name: '`~pause`', value: '**Pauses the current song!**'},
+                {name: '`~unpause`', value: '**Unpauses the current song!**'},
+                {name: '`~loop`', value: '**Loops the current song!**'}
+            )
+            .setTimestamp()
+            .setFooter("Koala is always watching!");
+
+            return message.channel.send(musicEmbed)
+        }
+        if(args[0] === 'economy'){
+            const economyEmbed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setAuthor('Economy Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+            .addFields(
+                {name: '`~balance`', value: "**Check your own balance or another user's balance!**"},
+                {name: '`~deposit`', value: "**Deposit your money to the bank!**"},
+                {name: '`~withdraw`', value: "**Withdraw your money from the bank!"},
+                {name: '`~pay`', value: "**Pay money to another user**"}
+            )
+            .setTimestamp()
+            .setFooter("Koala is always watching!")
+
+            return message.channel.send(economyEmbed);
         }
         
 
     }
-    
-
-
 
 }
 
