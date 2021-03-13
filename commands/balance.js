@@ -28,14 +28,14 @@ module.exports = {
         message.channel.send(balanceEmbed);
     }
 
-        
-
-        if(target){
-
         let targetData = await profileModel.findOne({ userID: target.id });
         let coins = targetData.Koins;
         let bank = targetData.bank;
         let targetTotal = coins + bank;
+
+        if(!targetData) return message.channel.send(`<@${target.id}> does not have a profile yet!`)
+
+        if(target){
 
         const Embed = new Discord.MessageEmbed()
         .setColor('RANDOM')

@@ -37,7 +37,7 @@ module.exports = {
                 },
             });
 
-            message.channel.send(`You have successfully transferred all of your Koins to <@${target.id}>!`)
+            return message.channel.send(`You have successfully transferred all of your Koins to <@${target.id}>!`)
 
 
         }
