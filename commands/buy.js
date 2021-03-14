@@ -28,8 +28,7 @@ module.exports = {
             });
             dayModel1.save();
             console.log('The Day Database was created');
-            return
-    
+            
         } 
 
         const itemModel = await itemData.findOne({ title: 'ItemDB'});
@@ -80,6 +79,8 @@ module.exports = {
                 })
               
                 console.log('The Price of GreenLeaves was randomized');
+                message.channel.send("Checking Today's Stock...redo the command!")
+                return
 
 
             }
@@ -112,6 +113,8 @@ module.exports = {
                     })
 
                     console.log('The Price of GreenLeaves was randomized');
+                    message.channel.send("Checking Today's Stock...redo the command!")
+                    return
 
     
                 }
@@ -143,6 +146,10 @@ module.exports = {
                          Saturday: false
                         })
 
+                        console.log('The Price of GreenLeaves was randomized');
+                        message.channel.send("Checking Today's Stock...redo the command!")
+                        return
+
 
         
                     }    
@@ -173,6 +180,9 @@ module.exports = {
                              Friday: false, 
                              Saturday: false
                             })
+                            console.log('The Price of GreenLeaves was randomized');
+                            message.channel.send("Checking Today's Stock...redo the command!")
+                            return                   
             
                         }
 
@@ -202,6 +212,10 @@ module.exports = {
                                  Friday: false, 
                                  Saturday: false
                                 })
+
+                                console.log('The Price of GreenLeaves was randomized');
+                                message.channel.send("Checking Today's Stock...redo the command!")
+                                return    
                 
                             }
 
@@ -231,6 +245,9 @@ module.exports = {
                                      Friday: true, 
                                      Saturday: false
                                     })
+                                    console.log('The Price of GreenLeaves was randomized');
+                                    message.channel.send("Checking Today's Stock...redo the command!")
+                                    return    
                     
                                 }
 
@@ -260,6 +277,10 @@ module.exports = {
                                          Friday: false, 
                                          Saturday: true
                                         })
+                                        
+                                        console.log('The Price of GreenLeaves was randomized');
+                                        message.channel.send("Checking Today's Stock...redo the command!")
+                                        return    
                         
                                     }
     

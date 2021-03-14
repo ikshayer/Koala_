@@ -184,7 +184,7 @@ module.exports = {
             .addFields(
                 {name: '`~balance`', value: "**Check your own balance or another user's balance!**"},
                 {name: '`~deposit`', value: "**Deposit your money to the bank!**"},
-                {name: '`~withdraw`', value: "**Withdraw your money from the bank!"},
+                {name: '`~withdraw`', value: "**Withdraw your money from the bank!**"},
                 {name: '`~pay`', value: "**Pay money to another user**"}
             )
             .setTimestamp()
