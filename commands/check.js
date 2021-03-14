@@ -85,7 +85,7 @@ module.exports = {
 
             if(day === 1 && !dayModel.Monday){
                 const max = Math.ceil(200);
-                const min = Math.ceil(0);
+                const min = Math.ceil(90);
                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
     
                 await itemData.findOneAndUpdate(
@@ -117,8 +117,8 @@ module.exports = {
                 }
 
                 if(day === 2 && !dayModel.Tuesday){
-                    const max = Math.ceil(200);
-                    const min = Math.ceil(0);
+                    const max = Math.ceil(300);
+                    const min = Math.ceil(90);
                     let randomAmount = Math.floor(Math.random() * (max - min)) + min;
         
                     await itemData.findOneAndUpdate(
@@ -151,8 +151,8 @@ module.exports = {
                     }    
 
                     if(day === 3 && !dayModel.Wednesday){
-                        const max = Math.ceil(300);
-                        const min = Math.ceil(50);
+                        const max = Math.ceil(400);
+                        const min = Math.ceil(90);
                         let randomAmount = Math.floor(Math.random() * (max - min)) + min;
             
                         await itemData.findOneAndUpdate(
@@ -182,8 +182,8 @@ module.exports = {
                         }
 
                         if(day === 4 && !dayModel.Thursday){
-                            const max = Math.ceil(250);
-                            const min = Math.ceil(0);
+                            const max = Math.ceil(300);
+                            const min = Math.ceil(70);
                             let randomAmount = Math.floor(Math.random() * (max - min)) + min;
                 
                             await itemData.findOneAndUpdate(
@@ -215,7 +215,7 @@ module.exports = {
 
                             if(day === 5 && !dayModel.Friday){
                                 const max = Math.ceil(200);
-                                const min = Math.ceil(0);
+                                const min = Math.ceil(50);
                                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
                     
                                 await itemData.findOneAndUpdate(
