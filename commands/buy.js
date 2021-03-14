@@ -51,7 +51,7 @@ module.exports = {
 
         console.log(day);
 
-        if(day === 1 && !dayModel.Sunday){
+        if(day === 0 && !dayModel.Sunday){
             const max = Math.ceil(120);
             const min = Math.ceil(90);
             let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -83,7 +83,7 @@ module.exports = {
 
             }
 
-            if(day === 0 && !dayModel.Monday){
+            if(day === 1 && !dayModel.Monday){
                 const max = Math.ceil(200);
                 const min = Math.ceil(0);
                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
