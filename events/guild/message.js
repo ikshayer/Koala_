@@ -42,6 +42,7 @@ try{
             serverID: message.guild.id,
             Koins: 1000,
             bank: 0,
+            greenleaves: 0
     
     
         });
@@ -60,7 +61,7 @@ try{
 
 
 
-let args = message.content.slice(prefix.length).split(/ +/);
+let args = message.content.toLowerCase().slice(prefix.length).split(/ +/);
 let cmd = args.shift().toLowerCase();
 
 const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));

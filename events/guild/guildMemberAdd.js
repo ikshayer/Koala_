@@ -14,6 +14,7 @@ module.exports = async (client, Discord, member)  => {
         serverID: member.guild.id,
         Koins: 1000,
         bank: 0,
+        greenleaves: 0
 
 
     });

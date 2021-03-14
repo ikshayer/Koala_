@@ -47,7 +47,7 @@ module.exports = {
         .setAuthor(`The Balance of ${target.username} is:`, `${target.displayAvatarURL({dynamic: true})}`)
         .addFields(
             { name: `Wallet: ${coins}`, value: `**Bank: ${bank}**`, inline: true  },
-            { name: `Total: **${targetTotal}**`, value:  '-=-=-=-=-=-', inline: true },
+            { name: `Total: **${targetTotal}**`, value:  '\u200B', inline: true },
             
             
 
