@@ -51,7 +51,7 @@ module.exports = {
 
         console.log(day);
 
-        if(day === 0 && !dayModel.Sunday){
+        if(day === 1 && !dayModel.Sunday){
             const max = Math.ceil(120);
             const min = Math.ceil(90);
             let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -79,13 +79,11 @@ module.exports = {
                 })
               
                 console.log('The Price of GreenLeaves was randomized');
-                message.channel.send("Checking Today's Stock...redo the command!")
-                return
-
+               
 
             }
 
-            if(day === 1 && !dayModel.Monday){
+            if(day === 0 && !dayModel.Monday){
                 const max = Math.ceil(200);
                 const min = Math.ceil(0);
                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -113,8 +111,7 @@ module.exports = {
                     })
 
                     console.log('The Price of GreenLeaves was randomized');
-                    message.channel.send("Checking Today's Stock...redo the command!")
-                    return
+                   
 
     
                 }
@@ -147,8 +144,7 @@ module.exports = {
                         })
 
                         console.log('The Price of GreenLeaves was randomized');
-                        message.channel.send("Checking Today's Stock...redo the command!")
-                        return
+                        
 
 
         
@@ -181,8 +177,7 @@ module.exports = {
                              Saturday: false
                             })
                             console.log('The Price of GreenLeaves was randomized');
-                            message.channel.send("Checking Today's Stock...redo the command!")
-                            return                   
+                                              
             
                         }
 
@@ -214,8 +209,7 @@ module.exports = {
                                 })
 
                                 console.log('The Price of GreenLeaves was randomized');
-                                message.channel.send("Checking Today's Stock...redo the command!")
-                                return    
+                                    
                 
                             }
 
@@ -246,8 +240,7 @@ module.exports = {
                                      Saturday: false
                                     })
                                     console.log('The Price of GreenLeaves was randomized');
-                                    message.channel.send("Checking Today's Stock...redo the command!")
-                                    return    
+                                        
                     
                                 }
 
@@ -279,26 +272,22 @@ module.exports = {
                                         })
 
                                         console.log('The Price of GreenLeaves was randomized');
-                                        message.channel.send("Checking Today's Stock...redo the command!")
-                                        return    
+                                           
                         
                                     }
     
 
             if(cmd === 'check'){
 
+                const TrueitemModel = await itemData.findOne({ title: 'ItemDB'});
                 let priceEmbed = new Discord.MessageEmbed()
                     .setColor('RANDOM')
-                    .setDescription(`The Price of Green Leaves today is ${itemModel.GreenLeavesPrice} Koins!`)                
+                    .setDescription(`The Price of Green Leaves today is ${TrueitemModel.GreenLeavesPrice} Koins!`)                
             
                      return message.channel.send(priceEmbed);
        
-            
             }
     }
 }
 
 
-
-
-   
