@@ -46,12 +46,12 @@ module.exports = {
         }
 
         let date = new Date();
-        let day = date.getHours();
+        let day = date.getDay();
         
 
         console.log(day);
 
-        if(day === 10 && !dayModel.Sunday){
+        if(day === 0 && !dayModel.Sunday){
             const max = Math.ceil(120);
             const min = Math.ceil(90);
             let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -85,7 +85,7 @@ module.exports = {
 
             }
 
-            if(day === 11 && !dayModel.Monday){
+            if(day === 1 && !dayModel.Monday){
                 const max = Math.ceil(200);
                 const min = Math.ceil(0);
                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -119,7 +119,7 @@ module.exports = {
     
                 }
 
-                if(day === 12 && !dayModel.Tuesday){
+                if(day === 2 && !dayModel.Tuesday){
                     const max = Math.ceil(200);
                     const min = Math.ceil(0);
                     let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -154,7 +154,7 @@ module.exports = {
         
                     }    
 
-                    if(day === 13 && !dayModel.Wednesday){
+                    if(day === 3 && !dayModel.Wednesday){
                         const max = Math.ceil(300);
                         const min = Math.ceil(50);
                         let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -186,7 +186,7 @@ module.exports = {
             
                         }
 
-                        if(day === 14 && !dayModel.Thursday){
+                        if(day === 4 && !dayModel.Thursday){
                             const max = Math.ceil(250);
                             const min = Math.ceil(0);
                             let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -219,7 +219,7 @@ module.exports = {
                 
                             }
 
-                            if(day === 15 && !dayModel.Friday){
+                            if(day === 5 && !dayModel.Friday){
                                 const max = Math.ceil(200);
                                 const min = Math.ceil(0);
                                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -251,7 +251,7 @@ module.exports = {
                     
                                 }
 
-                                if(day === 16 && !dayModel.Saturday){
+                                if(day === 6 && !dayModel.Saturday){
                                     const max = Math.ceil(400);
                                     const min = Math.ceil(50);
                                     let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -277,7 +277,7 @@ module.exports = {
                                          Friday: false, 
                                          Saturday: true
                                         })
-                                        
+
                                         console.log('The Price of GreenLeaves was randomized');
                                         message.channel.send("Checking Today's Stock...redo the command!")
                                         return    
