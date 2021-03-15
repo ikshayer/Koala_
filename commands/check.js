@@ -51,7 +51,7 @@ module.exports = {
 
         console.log(day);
 
-        if(day === 0 && !dayModel.Sunday){
+        if(day == 0 && !dayModel.Sunday){
             const max = Math.ceil(120);
             const min = Math.ceil(90);
             let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -83,7 +83,7 @@ module.exports = {
 
             }
 
-            if(day === 1 && !dayModel.Monday){
+            if(day == 1 && !dayModel.Monday){
                 const max = Math.ceil(200);
                 const min = Math.ceil(90);
                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -116,7 +116,7 @@ module.exports = {
     
                 }
 
-                if(day === 2 && !dayModel.Tuesday){
+                if(day == 2 && !dayModel.Tuesday){
                     const max = Math.ceil(300);
                     const min = Math.ceil(90);
                     let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -150,7 +150,7 @@ module.exports = {
         
                     }    
 
-                    if(day === 3 && !dayModel.Wednesday){
+                    if(day == 3 && !dayModel.Wednesday){
                         const max = Math.ceil(400);
                         const min = Math.ceil(90);
                         let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -181,7 +181,7 @@ module.exports = {
             
                         }
 
-                        if(day === 4 && !dayModel.Thursday){
+                        if(day == 4 && !dayModel.Thursday){
                             const max = Math.ceil(300);
                             const min = Math.ceil(70);
                             let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -213,7 +213,7 @@ module.exports = {
                 
                             }
 
-                            if(day === 5 && !dayModel.Friday){
+                            if(day == 5 && !dayModel.Friday){
                                 const max = Math.ceil(200);
                                 const min = Math.ceil(50);
                                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -244,7 +244,7 @@ module.exports = {
                     
                                 }
 
-                                if(day === 6 && !dayModel.Saturday){
+                                if(day == 6 && !dayModel.Saturday){
                                     const max = Math.ceil(400);
                                     const min = Math.ceil(50);
                                     let randomAmount = Math.floor(Math.random() * (max - min)) + min;
@@ -299,7 +299,7 @@ module.exports = {
                 if(!amount) return message.channel.send('Please enter the amount you want to buy!');
                 if(isNaN(amount)) return message.channel.send('Please enter a number!');
                 if(profileData.Koins < cost) return message.channel.send('You do not have that much money in your wallet to buy the GreenLeaves!');
-                if(!day === 0) return message.channel.send('You can only buy these items on Sunday!')
+                if(!day == 0) return message.channel.send('You can only buy these items on Sunday!')
                 if(item === 'greenleaves'){
 
                     const userModel = await profileModel.findOneAndUpdate(
@@ -345,7 +345,7 @@ module.exports = {
             if(!item) return message.channel.send('Please enter the item you want to sell!');
             if(!amount) return message.channel.send('Please enter the amount you want to sell!');
             if(isNaN(amount)) return message.channel.send('Please enter a number!');
-            if(day === 0) return message.channel.send(`You cannot sell that item on Sunday!`)
+            if(day == 0) return message.channel.send(`You cannot sell that item on Sunday!`)
             if(profileData.greenleaves < amount) return message.channel.send(`You do not have that many of that item to sell!`)
 
             if(item === 'greenleaves'){
