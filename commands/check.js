@@ -298,7 +298,7 @@ module.exports = {
                 if(!item) return message.channel.send('Please enter the item you want to buy!');
                 if(!amount) return message.channel.send('Please enter the amount you want to buy!');
                 if(isNaN(amount)) return message.channel.send('Please enter a number!');
-                if(profileData.Koins < cost) return message.channel.send('You do not have that much money in your wallet to buy the GreenLeaves!');
+                if(profileData.Koins < cost) return message.channel.send('You do not have that much money in your **wallet** to buy that item!');
                 if(!day == 0) return message.channel.send('You can only buy these items on Sunday!')
                 if(item === 'greenleaves'){
 

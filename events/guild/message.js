@@ -33,10 +33,10 @@ if(message.content.toLowerCase() === "thx koala" || message.content.toLowerCase(
 
 if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-let profileData;
+let fakeprofileData;
 try{
-    profileData = await profileModel.findOne({ userID: message.author.id});
-    if(!profileData){
+    fakeprofileData = await profileModel.findOne({ userID: message.author.id});
+    if(!fakeprofileData){
         let profile = await profileModel.create({
             userID: message.author.id,
             serverID: message.guild.id,
@@ -48,10 +48,9 @@ try{
         });
         profile.save();
 
-        message.channel.send('Oh hey! Seems like this is your first command, let me quickly scribble you on my notebook!')
+        
 
-        return
-
+        
     
     }
 
@@ -59,7 +58,7 @@ try{
     console.log(err);
 }
 
-
+let profileData = await profileModel.findOne({userID: message.author.id});
 
 let args = message.content.toLowerCase().slice(prefix.length).split(/ +/);
 let cmd = args.shift().toLowerCase();
