@@ -1,4 +1,5 @@
-module.exports = (client, Discord) => {
-    console.log("Koala is online!");
+module.exports = (client) => {
+
+    console.log("Koala is online!")  
     
 }

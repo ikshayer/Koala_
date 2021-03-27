@@ -1,4 +1,4 @@
-const profileModel = require(`../models/profileScheme`)
+const profileModel = require(`../../models/profileScheme`)
 const mongoose = require("mongoose");
 module.exports = {
     name: 'balance',
@@ -7,9 +7,9 @@ module.exports = {
     description: 'The Balance command!',
     async execute(message, args, cmd, client, Discord, profileData){
 
-        const target = message.mentions.users.first();
-
-        if(!target){
+        const target = message.mentions.users.first();    //getting the tagged user we want to check the balance of
+ 
+        if(!target){                                                      //if the tagged user is not mentioned then the command user's bal is shown
         const total = profileData.Koins + profileData.bank;
 
         const balanceEmbed = new Discord.MessageEmbed()
@@ -29,12 +29,12 @@ module.exports = {
     }
 
         
-        if(target){
+        if(target){                  //if the tagged user is mentioned the tagged user's bal is shown
 
         let targetData = await profileModel.findOne({ userID: target.id });
         
 
-        if(!targetData) {return message.channel.send(`<@${target.id}> does not have a profile yet!`)
+        if(!targetData) {return message.channel.send(`<@${target.id}> does not have a profile yet!`)          //we are getting the tagged user's profile
         }
         else if(targetData){
         let coins = targetData.Koins;

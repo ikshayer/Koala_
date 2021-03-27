@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
-const dayData = require('../models/dayScheme')
-const itemData = require('../models/itemScheme')
+const dayData = require('../../models/dayScheme')
+const itemData = require('../../models/itemScheme')
 const mongoose = require('mongoose');
-const profileModel = require('../models/profileScheme')
+const profileModel = require('../../models/profileScheme')
 
 
 module.exports = {

@@ -7,7 +7,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop'], //We are using aliases to run the skip and stop command follow this tutorial if lost: https://www.youtube.com/watch?v=QBUJ3cdofqc
+    aliases: ['skip', 'stop', 'pause', 'unpause', 'loop'], //We are using aliases to run the command
     cooldown: 0,
     description: 'Advanced music bot',
     async execute(message,args, cmd, client, Discord){

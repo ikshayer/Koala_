@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const profileModel = require('../models/profileScheme')
+const profileModel = require('../../models/profileScheme')
 
 module.exports = {
     name: 'pay',
