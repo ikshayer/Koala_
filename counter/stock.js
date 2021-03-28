@@ -269,5 +269,5 @@ const dayModel = await dayData.findOne({title: 'DayDB'});
                                            
                         
                                     }
-    }, 5000);
+    }, 600000);
 }
