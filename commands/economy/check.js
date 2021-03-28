@@ -11,6 +11,9 @@ module.exports = {
     cooldowns: 0,
     description: 'you buy stuff',
     async execute(message, args, cmd, client, Discord, profileData){
+
+        let date = new Date();
+        let day = date.getDay()
     
 
             if(cmd === 'check'){
