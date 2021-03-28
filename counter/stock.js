@@ -1,5 +1,6 @@
 const dayData = require('../models/dayScheme')
 const itemData = require('../models/itemScheme')
+const profileData = require('../models/profileScheme')
 const mongoose = require('mongoose');
 
 
@@ -73,8 +74,13 @@ const dayModel = await dayData.findOne({title: 'DayDB'});
                 })
               
                 console.log('The Price of GreenLeaves was randomized');
-               
 
+                 await profileData.updateMany(
+                    { GreenLeaves: 0,
+                     Onion: 0
+                    }
+                )
+            
             }
 
             if(day == 1 && !dayModel.Monday){
@@ -105,6 +111,11 @@ const dayModel = await dayData.findOne({title: 'DayDB'});
                     })
 
                     console.log('The Price of GreenLeaves was randomized');
+                    
+                    /*await profileData.updateMany({
+
+                    })
+                    */
                    
 
     
