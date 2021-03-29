@@ -38,7 +38,7 @@ module.exports = {
             
             const inventoryEmbed = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setAuthor(`The Inventory of${target.username} is: `, `${target.displayAvatarURL({dynamic: true})}`)
+            .setAuthor(`The Inventory of ${target.username} is: `, `${target.displayAvatarURL({dynamic: true})}`)
             .addFields({ name: `Green Leaves: ${targetData.greenleaves}`, value: '**Onions: 0**'})
             .setTimestamp()
             .setFooter('Koala is always watching 👀')
