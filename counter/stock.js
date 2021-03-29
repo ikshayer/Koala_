@@ -84,7 +84,7 @@ const dayModel = await dayData.findOne({title: 'DayDB'});
             }
 
             if(day == 1 && !dayModel.Monday){
-                const max = Math.ceil(200);
+                const max = Math.ceil(400);
                 const min = Math.ceil(90);
                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
     
@@ -122,7 +122,7 @@ const dayModel = await dayData.findOne({title: 'DayDB'});
                 }
 
                 if(day == 2 && !dayModel.Tuesday){
-                    const max = Math.ceil(300);
+                    const max = Math.ceil(400);
                     const min = Math.ceil(90);
                     let randomAmount = Math.floor(Math.random() * (max - min)) + min;
         
@@ -219,7 +219,7 @@ const dayModel = await dayData.findOne({title: 'DayDB'});
                             }
 
                             if(day == 5 && !dayModel.Friday){
-                                const max = Math.ceil(200);
+                                const max = Math.ceil(400);
                                 const min = Math.ceil(50);
                                 let randomAmount = Math.floor(Math.random() * (max - min)) + min;
                     
