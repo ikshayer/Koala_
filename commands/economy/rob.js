@@ -22,7 +22,7 @@ module.exports ={
 
             if(!checktargetData) return message.channel.send(`<@${target.id}> does not have a profile yet!`)
 
-            if(checktargetData.Koins == 0) return message.channel.send(`It seems <@${target.id}> has no Koins in their wallet!`)
+            if(checktargetData.Koins <= 1000) return message.channel.send(`It seems <@${target.id}> has no Koins in their wallet!`)
 
             if(randomNumber > 660){
 
