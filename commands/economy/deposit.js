@@ -4,7 +4,7 @@ module.exports = {
     aliases: ['dep'],
     cooldown: 0,
     description: 'The deposit command!',
-    async execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord, profileData, lawData){
 
         
         let amount = args[0]

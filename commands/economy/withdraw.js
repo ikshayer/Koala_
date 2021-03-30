@@ -4,7 +4,7 @@ module.exports = {
     aliases: ['wd'],
     cooldown: 0,
     description: 'The Withdraw command!',
-    async execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord, profileData, lawData){
 
         
         let amount = args[0]

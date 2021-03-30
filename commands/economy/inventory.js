@@ -10,7 +10,7 @@ module.exports = {
     aliases: ['inv'],
     cooldowns: 0,
     description: 'you buy stuff',
-    async execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord, profileData, lawData){
 
         const target = message.mentions.users.first();
         

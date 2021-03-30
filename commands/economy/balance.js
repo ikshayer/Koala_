@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['bal', 'bl'],
     cooldown: 0,
     description: 'The Balance command!',
-    async execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord, profileData, lawData){
 
         const target = message.mentions.users.first();    //getting the tagged user we want to check the balance of
  
@@ -47,7 +47,7 @@ module.exports = {
         .setAuthor(`The Balance of ${target.username} is:`, `${target.displayAvatarURL({dynamic: true})}`)
         .addFields(
             { name: `Wallet: ${coins}`, value: `**Bank: ${bank}**`, inline: true  },
-            { name: `Total: **${targetTotal}**`, value:  '\u200B', inline: true },
+            { name: `Total: **${targetTotal}**`, value:  '-=-=-=-=-=-', inline: true },
             
             
 

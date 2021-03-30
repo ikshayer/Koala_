@@ -1,5 +1,6 @@
 require('dotenv').config();
 const profileModel = require('../../models/profileScheme');
+const lawModel = require('../../models/lawScheme');
 const cooldowns = new Map();
 module.exports = async (Discord, client, message)=>  {
 const prefix = process.env.PREFIX;
@@ -60,6 +61,23 @@ try{
 
 let profileData = await profileModel.findOne({userID: message.author.id});
 
+let fakeLawData;
+try{
+    fakeLawData = await lawModel.findOne({userID: message.author.id})
+    if(!fakeLawData){
+        let lawData1 = await lawModel.create({
+            userID: message.author.id,
+            crime: 0
+        })
+        lawData1.save()
+    }
+
+} catch(err){
+    console.log(err);
+}
+
+let lawData = await lawModel.findOne({userID: message.author.id});
+
 let args = message.content.toLowerCase().slice(prefix.length).split(/ +/);
 let cmd = args.shift().toLowerCase();
 
@@ -91,7 +109,7 @@ setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
 
 
 try{
-command.execute(message, args, cmd, client, Discord, profileData);
+command.execute(message, args, cmd, client, Discord, profileData, lawData);
 }
 catch (err){
     message.reply("There was an error in executing the code");

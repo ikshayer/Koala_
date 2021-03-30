@@ -9,7 +9,7 @@ module.exports = {
     aliases: ['buy', 'sell'],
     cooldowns: 0,
     description: 'you buy stuff',
-    async execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord, profileData, lawData){
 
         let date = new Date();
         let day = date.getDay()

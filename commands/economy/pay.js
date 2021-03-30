@@ -6,7 +6,7 @@ module.exports = {
     aliases: [],
     cooldowns: 0,
     description: 'you pay other person',
-    async execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord, profileData, lawData){
 
         let target = message.mentions.users.first();
         let amount = args[1];
