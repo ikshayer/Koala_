@@ -31,9 +31,9 @@ module.exports = {
         .setDescription(`${status.status}`)
         .addFields(
             {name: 'Occupation: ', value: '`Coming Soon`', inline: true},
-            {name: `Koins`, value: `**Wallet:**  Ξ ${profileData.Koins}
-            **Bank:** Ξ ${profileData.bank}
-            **Total:** Ξ ${profileData.Koins + profileData.bank}`, inline: true},
+            {name: `Koins`, value: `**Wallet:**  ₭ ${profileData.Koins}
+            **Bank:** ₭ ${profileData.bank}
+            **Total:** ₭ ${profileData.Koins + profileData.bank}`, inline: true},
             {name: '\u200B', value: `**Crime Level:** ${lawData.crime}`},
             {name: `Inventory: ${profileData.greenleaves} `, value: '\u200B'}
 
