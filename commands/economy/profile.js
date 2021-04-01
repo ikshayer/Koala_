@@ -108,7 +108,7 @@ module.exports = {
 
         if(cmd === 'status'){
 
-            const text = args.splice(0).join(' ');
+            const text = args.splice(0, 15).join(' ');
             if(!text) return message.channel.send('```Please provide a status!```');
 
 
