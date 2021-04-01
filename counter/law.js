@@ -1,7 +1,9 @@
 const lawModel = require('../models/lawScheme')
 module.exports = async (client) =>{
 
-    setInterval = (async () =>{
+    setInterval(async () =>{
+
+        
 
         await lawModel.updateMany(
         {crime: {$gt: 0}},
@@ -9,9 +11,9 @@ module.exports = async (client) =>{
              crime: -1
         }});
         
-    console.log('The Crime rate decreased')
+    console.log('The Crime levels decreased')
 
-    }, 21600000)
+    }, 21600000);
     
 
 }
