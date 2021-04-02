@@ -83,7 +83,7 @@ let cmd = args.shift().toLowerCase();
 
 const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
-if(!command) return 
+if(!command) return message.reply("This command doesn't exist, please do `~help` for the list of available commands!")
 
 if(!cooldowns.has(command.name)){
     cooldowns.set(command.name, new Discord.Collection());
