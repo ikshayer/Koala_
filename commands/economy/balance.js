@@ -7,6 +7,10 @@ module.exports = {
     description: 'The Balance command!',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
 
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
         const target = message.mentions.users.first();    //getting the tagged user we want to check the balance of
  
         if(!target){                                                      //if the tagged user is not mentioned then the command user's bal is shown
@@ -16,8 +20,8 @@ module.exports = {
         .setColor('RANDOM')
         .setAuthor(`The Balance of ${message.author.username} is:`, `${message.author.displayAvatarURL({dynamic: true})}`)
         .addFields(
-            { name: `Wallet: ${profileData.Koins}`, value: `**Bank: ${profileData.bank}**`, inline: true },
-            { name: `Total: **${total}** `, value: '-=-=-=-=-=-', inline: true}
+            { name: `Wallet: ${numberWithCommas(profileData.Koins)}`, value: `**Bank: ${numberWithCommas(profileData.bank)}**`, inline: true },
+            { name: `Total: **${numberWithCommas(total)}** `, value: '-=-=-=-=-=-', inline: true}
             
             
 
@@ -46,8 +50,8 @@ module.exports = {
         .setColor('RANDOM')
         .setAuthor(`The Balance of ${target.username} is:`, `${target.displayAvatarURL({dynamic: true})}`)
         .addFields(
-            { name: `Wallet: ${coins}`, value: `**Bank: ${bank}**`, inline: true  },
-            { name: `Total: **${targetTotal}**`, value:  '-=-=-=-=-=-', inline: true },
+            { name: `Wallet: ${numberWithCommas(coins)}`, value: `**Bank: ${numberWithCommas(bank)}**`, inline: true  },
+            { name: `Total: **${numberWithCommas(targetTotal)}**`, value:  '-=-=-=-=-=-', inline: true },
             
             
 

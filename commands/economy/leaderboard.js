@@ -7,6 +7,10 @@ module.exports = {
     description: 'The leaderboard command!',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
 
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
     const lb = await profileModel.find()
     .sort({bank: -1})
 
@@ -20,7 +24,7 @@ module.exports = {
      .setColor('RANDOM')
      .setAuthor('Leaderboard for Bank')
      .addFields(
-         {name: '\u200B', value: topBank.map(item => `${i++ + 1}. <@${item.userID}> - ${item.bank} 
+         {name: '\u200B', value: topBank.map(item => `${i++ + 1}. <@${item.userID}> - ${numberWithCommas(item.bank)} 
           -=-=-=-=-`)}
      )
      .setFooter("Koala is always watching 👀")

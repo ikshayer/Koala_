@@ -10,6 +10,10 @@ module.exports = {
     description: 'The profile command',
 
     async execute(message, args, cmd, client, Discord, profileData, lawData){
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
         
         const statuscheck = await StatusModel.findOne({userID: message.author.id})
         if(!statuscheck){
@@ -35,11 +39,11 @@ module.exports = {
             .setDescription(`${status.status}`)
             .addFields(
                 {name: 'Occupation: ', value: '`Coming Soon`', inline: true},
-                {name: `Koins`, value: `**Wallet:**  ӄ ${profileData.Koins}
-                **Bank:** ӄ ${profileData.bank}
-                **Total:** ӄ ${profileData.Koins + profileData.bank}`, inline: true},
+                {name: `Koins`, value: `**Wallet:**  ӄ ${numberWithCommas(profileData.Koins)}
+                **Bank:** ӄ ${numberWithCommas(profileData.bank)}
+                **Total:** ӄ ${numberWithCommas(profileData.Koins + profileData.bank)}`, inline: true},
                 {name: '\u200B', value: `**Crime Level:** ${lawData.crime}`},
-                {name: `Inventory: ${profileData.greenleaves} `, value: '\u200B'}
+                {name: `Inventory: ${numberWithCommas(profileData.greenleaves)} `, value: '\u200B'}
 
 
             )
@@ -88,11 +92,11 @@ module.exports = {
             .setDescription(`${targetstatus.status}`)
             .addFields(
                 {name: 'Occupation: ', value: '`Coming Soon`', inline: true},
-                {name: `Koins`, value: `**Wallet:**  ӄ ${targetdata.Koins}
-                **Bank:** ӄ ${targetdata.bank}
-                **Total:** ӄ ${targetdata.Koins + targetdata.bank}`, inline: true},
+                {name: `Koins`, value: `**Wallet:**  ӄ ${numberWithCommas(targetdata.Koins)}
+                **Bank:** ӄ ${numberWithCommas(targetdata.bank)}
+                **Total:** ӄ ${numberWithCommas(targetdata.Koins + targetdata.bank)}`, inline: true},
                 {name: '\u200B', value: `**Crime Level:** ${targetLaw.crime}`},
-                {name: `Inventory: ${targetdata.greenleaves} `, value: '\u200B'}
+                {name: `Inventory: ${numberWithCommas(targetdata.greenleaves)} `, value: '\u200B'}
 
 
             )
