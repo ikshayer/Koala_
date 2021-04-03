@@ -14,8 +14,11 @@ module.exports = {
     const lb = await profileModel.find()
     .sort({bank: -1})
 
+    const lbKoins = await profileModel.find()
+    .sort({Koins: -1})
+
     const topBank = lb.slice(0, 10);
-    
+    const topKoins = lbKoins.slice(0, 10)   
     
     let i = 0;
     
@@ -24,8 +27,8 @@ module.exports = {
      .setColor('RANDOM')
      .setAuthor('Leaderboard for Bank')
      .addFields(
-         {name: '\u200B', value: topBank.map(item => `${i++ + 1}. <@${item.userID}> - ӄ ${numberWithCommas(item.bank)} 
-          -=-=-=-=-`)}
+         {name: '\u200B', value: topBank.map(item => `${i++ + 1}. **${client.users.cache.get(item.userID).username}** - ӄ ${numberWithCommas(item.bank)} 
+              `)}
      )
      .setFooter("Koala is always watching 👀")
      .setTimestamp()
