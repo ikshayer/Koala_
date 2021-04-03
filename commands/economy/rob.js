@@ -22,7 +22,7 @@ module.exports ={
 
             if(!checktargetData) return message.channel.send(`<@${target.id}> does not have a profile yet!`)
 
-            if(checktargetData.Koins <= 1000) return message.channel.send(`Bro chill, <@${target.id}> has less than 1000 Koin in their wallet!`)
+            if(checktargetData.Koins <= 1000) return message.channel.send(`Bro chill, <@${target.id}> has less than 1000 ӄoin in their wallet!`)
 
             if(randomNumber > 660){
 
@@ -60,8 +60,8 @@ module.exports ={
                 const Embed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setAuthor(`The Abyss is engulfed in utter rage, your Crime level is now ${law.crime}!`, 'https://cdn.discordapp.com/attachments/810142018697035806/819852539011792916/koala.png')
-                .setDescription(`**You stole ${amount} Koins!**`)
-                .setFooter('Be sure to deposit the Koins to your Bank to keep it safe!')
+                .setDescription(`**You stole ${amount} ӄoins!**`)
+                .setFooter('Be sure to deposit the ӄoins to your Bank to keep it safe!')
                 
                 
                 message.channel.send(Embed)
@@ -91,7 +91,7 @@ module.exports ={
                 .setColor('RANDOM')
                 .setAuthor(`No one fools the Abyss, your Crime Level is now ${law.crime}`, 'https://cdn.discordapp.com/attachments/810142018697035806/819852539011792916/koala.png')
                 .setDescription(`You tried to rob <@${target.id}> but their Aura was too strong`)
-                .setFooter('Be sure to deposit the Koins to your Bank!')
+                .setFooter('Be sure to deposit the ӄoins to your Bank!')
 
                 message.channel.send(embed)
                 return
@@ -136,8 +136,8 @@ module.exports ={
                 const Embed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setAuthor(`The Abyss' divine eyes see all, your Crime level is now ${law.crime}!`, 'https://cdn.discordapp.com/attachments/810142018697035806/819852539011792916/koala.png')
-                .setDescription(`**You stole ${amount} Koins!**`)
-                .setFooter('Be sure to deposit the Koins to your Bank!')
+                .setDescription(`**You stole ${amount} ӄoins!**`)
+                .setFooter('Be sure to deposit the ӄoins to your Bank!')
                 
                 
                 message.channel.send(Embed)
@@ -184,8 +184,8 @@ module.exports ={
                 const Embed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setAuthor(`The Abyss' eye blinked, your Crime level is now ${law.crime}!`, 'https://cdn.discordapp.com/attachments/810142018697035806/819852539011792916/koala.png')
-                .setDescription(`**You stole ${amount} Koins!**`)
-                .setFooter('Be sure to deposit the Koins to your Bank to keep it safe!')
+                .setDescription(`**You stole ${amount} ӄoins!**`)
+                .setFooter('Be sure to deposit the ӄoins to your Bank to keep it safe!')
                 
                 
                 message.channel.send(Embed);
@@ -223,8 +223,8 @@ module.exports ={
                 const Embed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setAuthor(`You have fooled God, your Crime Level is ${lawData.crime}!`, 'https://cdn.discordapp.com/attachments/810142018697035806/819852539011792916/koala.png')
-                .setDescription(`**You stole ${amount} Koins!**`)
-                .setFooter('Be sure to deposit the Koins to your Bank to keep it safe!')
+                .setDescription(`**You stole ${amount} ӄoins!**`)
+                .setFooter('Be sure to deposit the ӄoins to your Bank to keep it safe!')
                 
                 
                 message.channel.send(Embed);

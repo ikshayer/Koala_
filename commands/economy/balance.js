@@ -20,8 +20,8 @@ module.exports = {
         .setColor('RANDOM')
         .setAuthor(`The Balance of ${message.author.username} is:`, `${message.author.displayAvatarURL({dynamic: true})}`)
         .addFields(
-            { name: `Wallet: ${numberWithCommas(profileData.Koins)}`, value: `**Bank: ${numberWithCommas(profileData.bank)}**`, inline: true },
-            { name: `Total: **${numberWithCommas(total)}** `, value: '-=-=-=-=-=-', inline: true}
+            { name: `Wallet: ӄ ${numberWithCommas(profileData.Koins)}`, value: `**Bank: ӄ ${numberWithCommas(profileData.bank)}**`, inline: true },
+            { name: `Total: ӄ **${numberWithCommas(total)}** `, value: '-=-=-=-=-=-', inline: true}
             
             
 
@@ -50,8 +50,8 @@ module.exports = {
         .setColor('RANDOM')
         .setAuthor(`The Balance of ${target.username} is:`, `${target.displayAvatarURL({dynamic: true})}`)
         .addFields(
-            { name: `Wallet: ${numberWithCommas(coins)}`, value: `**Bank: ${numberWithCommas(bank)}**`, inline: true  },
-            { name: `Total: **${numberWithCommas(targetTotal)}**`, value:  '-=-=-=-=-=-', inline: true },
+            { name: `Wallet: ӄ ${numberWithCommas(coins)}`, value: `**Bank: ӄ ${numberWithCommas(bank)}**`, inline: true  },
+            { name: `Total: ӄ **${numberWithCommas(targetTotal)}**`, value:  '-=-=-=-=-=-', inline: true },
             
             
 

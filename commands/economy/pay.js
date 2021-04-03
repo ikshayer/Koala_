@@ -37,7 +37,7 @@ module.exports = {
                 },
             });
 
-            return message.channel.send(`You have successfully transferred all of your Koins to <@${target.id}>!`)
+            return message.channel.send(`You have successfully transferred all of your ӄoins to <@${target.id}>!`)
 
 
         }
@@ -45,7 +45,7 @@ module.exports = {
         if(isNaN(amount)) return message.channel.send('Please provide a number!')
         if(amount <= 0) return message.channel.send('Please enter an amount more than **0**!')
         if (amount % 1 != 0) return message.channel.send("The amount must be a whole number!");
-        if (amount > profileData.Koins) return message.channel.send(`You don't have that amount of Koins to pay others!`);
+        if (amount > profileData.Koins) return message.channel.send(`You don't have that amount of ӄoins to pay others!`);
 
         const userProfile = await profileModel.findOneAndUpdate({
             userID: message.author.id
@@ -66,7 +66,7 @@ module.exports = {
             },
         });
 
-        return message.channel.send(`You have successfully transferred **${amount}** Koins to <@${target.id}>`)
+        return message.channel.send(`You have successfully transferred **${amount}** ӄoins to <@${target.id}>`)
 
         
 

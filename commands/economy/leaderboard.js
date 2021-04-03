@@ -24,7 +24,7 @@ module.exports = {
      .setColor('RANDOM')
      .setAuthor('Leaderboard for Bank')
      .addFields(
-         {name: '\u200B', value: topBank.map(item => `${i++ + 1}. <@${item.userID}> - ${numberWithCommas(item.bank)} 
+         {name: '\u200B', value: topBank.map(item => `${i++ + 1}. <@${item.userID}> - ӄ ${numberWithCommas(item.bank)} 
           -=-=-=-=-`)}
      )
      .setFooter("Koala is always watching 👀")

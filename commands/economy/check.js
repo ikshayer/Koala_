@@ -20,7 +20,7 @@ module.exports = {
                 const TrueitemModel = await itemData.findOne({ title: 'ItemDB'});
                 let priceEmbed = new Discord.MessageEmbed()
                     .setColor('RANDOM')
-                    .setDescription(`The Price of Green Leaves today is ${TrueitemModel.GreenLeavesPrice} Koins!`)                
+                    .setDescription(`The Price of Green Leaves today is ${TrueitemModel.GreenLeavesPrice} ӄoins!`)                
             
                      return message.channel.send(priceEmbed);
        
@@ -55,7 +55,7 @@ module.exports = {
                         const Embed = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setAuthor('📈 Welcome to the Stock Market')
-                        .setDescription(`You have just bought ${amount} Green Leaves for the price of ${cost} Koins`)
+                        .setDescription(`You have just bought ${amount} Green Leaves for the price of ${cost} ӄoins`)
                         .addFields(
                          { name: '-=-=-=-=-', value: `You currently have ${TrueuserModel.greenleaves} Green Leaves in your inventory!`}
         
@@ -102,7 +102,7 @@ module.exports = {
                 const Embed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setAuthor('📈 Welcome to the Stock Market')
-                .setDescription(`You have just sold ${amount} Green Leaves for the price of ${money} Koins`)
+                .setDescription(`You have just sold ${amount} Green Leaves for the price of ${money} ӄoins`)
                 .addFields(
                  { name: '-=-=-=-=-', value: `You currently have ${TrueuserModel.greenleaves} Green Leaves in your inventory!`},
                 )

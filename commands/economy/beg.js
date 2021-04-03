@@ -18,9 +18,9 @@ module.exports = {
         });
         const begEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setDescription(`You begged and received ${randomNumber} Koins like a pathetic loser`)
+        .setDescription(`You begged and received ${randomNumber} ӄoins like a pathetic loser`)
 
-        return message.channel.send(`You begged and received **${randomNumber} Koins** like a pathetic loser`);
+        return message.channel.send(`You begged and received **${randomNumber} ӄoins** like a pathetic loser`);
 
     }
 }
