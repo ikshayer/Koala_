@@ -34,47 +34,7 @@ if(message.content.toLowerCase() === "thx koala" || message.content.toLowerCase(
 
 if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-let fakeprofileData;
-try{
-    fakeprofileData = await profileModel.findOne({ userID: message.author.id});
-    if(!fakeprofileData){
-        let profile = await profileModel.create({
-            userID: message.author.id,
-            serverID: message.guild.id,
-            Koins: 1000,
-            bank: 0,
-            greenleaves: 0
-    
-    
-        });
-        profile.save();
-
-        
-
-        
-    
-    }
-
-} catch(err){
-    console.log(err);
-}
-
 let profileData = await profileModel.findOne({userID: message.author.id});
-
-let fakeLawData;
-try{
-    fakeLawData = await lawModel.findOne({userID: message.author.id})
-    if(!fakeLawData){
-        let lawData1 = await lawModel.create({
-            userID: message.author.id,
-            crime: 0
-        })
-        lawData1.save()
-    }
-
-} catch(err){
-    console.log(err);
-}
 
 let lawData = await lawModel.findOne({userID: message.author.id});
 

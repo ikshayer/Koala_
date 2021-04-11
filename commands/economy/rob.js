@@ -7,6 +7,7 @@ module.exports ={
     description: 'The rob command!',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
 
+        if(!profileData) return message.channel.send('You do not have a profile, please do `~start` to create a profile!');
 
         if(lawData.crime >= 10) return message.channel.send('Sinners must grieve from their sins, only then shall the Abyss acknowledge their deeds')
 

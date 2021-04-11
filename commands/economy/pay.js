@@ -8,6 +8,8 @@ module.exports = {
     description: 'you pay other person',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
 
+        if(!profileData) return message.channel.send('You do not have a profile, please do `~start` to create a profile!');
+
         let target = message.mentions.users.first();
         let amount = args[1];
         const targetProf = await profileModel.findOne({ userID: target.id});

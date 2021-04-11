@@ -110,6 +110,8 @@ module.exports = {
 
             await message.channel.send('See ya next time!');
         }
+
+
         //Pause command
         else if(cmd === "pause"){
          if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");//Checks if the song is already paused.

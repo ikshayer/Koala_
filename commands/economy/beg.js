@@ -5,6 +5,9 @@ module.exports = {
     cooldown: 120,
     description: 'The Beg command!',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
+
+        if(!profileData) return message.channel.send('You do not have a profile, please do `~start` to create a profile!');
+        
         const randomNumber = Math.floor(Math.random() * 200) + 1;
         const response = await profileModel.findOneAndUpdate(
             {

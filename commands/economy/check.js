@@ -11,6 +11,8 @@ module.exports = {
     description: 'you buy stuff',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
 
+        if(!profileData) return message.channel.send('You do not have a profile, please do `~start` to create a profile!');
+
         let date = new Date();
         let day = date.getDay()
     

@@ -4,6 +4,8 @@ module.exports ={
     description: 'The entirety of the gamble commands',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
 
+        if(!profileData) return message.channel.send('You do not have a profile, please do `~start` to create a profile!');
+
         if(!args[0]) return message.reply('Please do `casino help` for a brief information on this facility!');
         if(args[0] === 'help'){
             const Embed = new Discord.MessageEmbed()
