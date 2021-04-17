@@ -1,15 +1,19 @@
 require('dotenv').config();
+const TicTacToe = require('discord-tictactoe')
 const profileModel = require('../../models/profileScheme');
 const lawModel = require('../../models/lawScheme');
 const cooldowns = new Map();
 module.exports = async (Discord, client, message)=>  {
 const prefix = process.env.PREFIX;
-
+const game = new TicTacToe({language: 'en'})
 
 if(message.channel.type == 'dm') return
 
 if(message.content.toLowerCase() === "shitty bot"){
     return message.channel.send('fuck you bitchass');
+}
+if(message.content.toLowerCase().startsWith('~ttt')){
+    return game.handleMessage(message);
 }
 
 if(message.content.toLowerCase() === "koala is bad"){                             //"koala is bad" reply

@@ -1,5 +1,9 @@
 const Discord = require('discord.js');
 require('dotenv').config();
+
+const {Wit} = require('node-wit')
+const voiceBot = new Wit({accessToken: '57MIABDVVUJXTN7T4ECFZQJKPHSKUSOP'})
+
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTIONS"]}); 
 const mongoose = require('mongoose');
 
