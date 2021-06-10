@@ -63,7 +63,23 @@ if(time_stamps.has(message.author.id)){
 
      if(current_time < expiration_time){
      const time_left = (expiration_time - current_time) / 1000;
-     return message.reply(`You have ${time_left.toFixed(1)} seconds left before you can do **~${command.name}** again!`);
+     const secondtime = Math.floor(time_left);
+
+     if(secondtime > 60){
+         const minutetime = Math.floor(secondtime / 60);
+
+         if(minutetime > 60){
+            const hourtime = Math.floor(minutetime / 60)
+            const min = Math.floor(((minutetime / 60) - hourtime) * 60);
+            let secondconv = Math.floor(((((minutetime / 60) - hourtime) * 60) - min) * 60)
+            return message.reply(`You have ${hourtime} hours ${min} minutes and ${secondconv} seconds left before you can do **~${command.name}** again!`);
+         }
+
+         let secondconv = Math.floor(((secondtime / 60) - minutetime) * 60);
+         return message.reply(`You have ${minutetime} minutes and ${secondconv} seconds left before you can do **~${command.name}** again!`);
+
+     }
+     return message.reply(`You have ${time_left.toFixed(0)} seconds left before you can do **~${command.name}** again!`);
  
 }
 }
