@@ -9,7 +9,7 @@ const game = new TicTacToe({language: 'en'})
 
 if(message.channel.type == 'dm') return
 
-if(message.content.toLowerCase() === ["ded server", "dead server"]){
+if(message.content.toLowerCase().includes === ["ded server", "dead server"]){
     return message.channel.send('THE FUCK YOU SAY ABOUT THIS SERVER U DUMB BITCH, I FRICK UR MOM LAST NIGHT OQWDHOQWDUIUQWD');
 }
 
