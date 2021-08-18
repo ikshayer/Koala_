@@ -60,7 +60,7 @@ if(/w+o+f+/i.test(sentence)) return message.delete();
         message.delete();
 
         setTimeout(function(){
-        message.author.roles.remove(muteRole.id)
+        MessageTarget.roles.remove(muteRole.id)
         
         }, 300000);
 
