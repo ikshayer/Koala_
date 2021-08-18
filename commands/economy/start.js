@@ -7,6 +7,8 @@ module.exports ={
     description: 'The user creates a profile using this',
     async execute(message, args, cmd, client, Discord, profileData, lawData){
     
+     message.channel.send('Illegal unfinished command');
+     return
 
         let filter = m => m.author.id === message.author.id
 

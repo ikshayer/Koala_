@@ -5,7 +5,7 @@ module.exports = async (client, Discord, member)  => {
     member.roles.add(welcomeRole.id);
     member.guild.channels.cache.get('540512338676023297').send(`Welcome to the club, <@${member.user.id}>!`);
 
-    const profile = await profileModel.findOne({ userID: member.id });
+    /*const profile = await profileModel.findOne({ userID: member.id });
 
     if(!profile){
 
@@ -19,9 +19,10 @@ module.exports = async (client, Discord, member)  => {
 
     });
     profile.save();
+    }  
+    */
 }
 
 
 
 
-}
