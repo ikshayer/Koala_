@@ -49,25 +49,6 @@ if(/a+w+o+f+/i.test(message.content)) return message.delete();
 if(/a+w+0+/i.test(message.content)) return message.delete();
 if(/a+w+o+/i.test(message.content)) return message.delete();
 
-if(message.content.toLowerCase().startsWith("aw") && message.content.toLowerCase().endsWith("o")){
-    return message.delete()
-}
-if(message.content.toLowerCase().startsWith("aw") && message.content.toLowerCase().endsWith("0")){
-    return message.delete()
-}
-if(message.content.toLowerCase().startsWith("wo") && message.content.toLowerCase().endsWith("f")){
-    return message.delete()
-}
-if(message.content.toLowerCase().startsWith("w0") && message.content.toLowerCase().endsWith("f")){
-    return message.delete()
-}
-if(message.content.toLowerCase().startsWith("aw0") && message.content.toLowerCase().endsWith("f")){
-    return message.delete()
-}
-if(message.content.toLowerCase().startsWith("awo") && message.content.toLowerCase().endsWith("f")){
-    return message.delete()
-}
-
 
 
 if(message.content.toLowerCase() === "shitty bot"){
