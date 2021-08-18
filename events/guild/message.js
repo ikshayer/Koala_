@@ -44,16 +44,16 @@ for(var i = 0; i < insults.length; i++){
 
 
 if(message.content.toLowerCase().startsWith("aw") && message.content.toLowerCase().endsWith("o")){
-    message.delete
+    return message.delete()
 }
 if(message.content.toLowerCase().startsWith("aw") && message.content.toLowerCase().endsWith("0")){
-    message.delete
+    return message.delete()
 }
 if(message.content.toLowerCase().startsWith("wo") && message.content.toLowerCase().endsWith("f")){
-    message.delete
+    return message.delete()
 }
 if(message.content.toLowerCase().startsWith("w0") && message.content.toLowerCase().endsWith("f")){
-    message.delete
+    return message.delete()
 }
 
 
