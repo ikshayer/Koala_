@@ -9,9 +9,54 @@ const game = new TicTacToe({language: 'en'})
 
 if(message.channel.type == 'dm') return
 
-if(message.content.toLowerCase().includes === ["ded server", "dead server"]){
-    return message.channel.send('THE FUCK YOU SAY ABOUT THIS SERVER U DUMB BITCH, I FRICK UR MOM LAST NIGHT OQWDHOQWDUIUQWD');
+const insults = ["ded server", "dead server"]
+
+for(var i = 0; i < insults.length; i++){
+
+    let filter = m => m.author.id === message.author.id
+
+     if(message.content.toLowerCase().includes(insults[i])){
+     return message.channel.send('THE FUCK YOU SAY ABOUT THIS SERVER U DUMB BITCH, I FRICK UR MOM LAST NIGHT OQWDHOQWDUIUQWD').then(() => {
+        message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 15000,
+            errors: ['time']
+
+        })
+        .then(message => {
+            message = message.first()
+            if (message.content.toLowerCase().includes("fucking") || message.content.toLowerCase().includes("fuck")) {
+              message.channel.send(`You can't fuck someone with your tiny 2 inch noodle, pleb`);
+            } else if (message.content.toLowerCase().includes('no')) {
+              message.channel.send(`All bite and no bark, I am dropping a ballistic missile at your home this very instance`);
+            } else {
+              message.channel.send(`No you bitch`)
+            }
+          })
+          .catch(collected => {
+              message.channel.send('Hmm, seems like the pussy got away');
+            return;
+        });
+
+        })
+     }
 }
+
+
+if(message.content.toLowerCase().startsWith("aw") && message.content.toLowerCase().endsWith("o")){
+    message.delete
+}
+if(message.content.toLowerCase().startsWith("aw") && message.content.toLowerCase().endsWith("0")){
+    message.delete
+}
+if(message.content.toLowerCase().startsWith("wo") && message.content.toLowerCase().endsWith("f")){
+    message.delete
+}
+if(message.content.toLowerCase().startsWith("w0") && message.content.toLowerCase().endsWith("f")){
+    message.delete
+}
+
+
 
 if(message.content.toLowerCase() === "shitty bot"){
     return message.channel.send('fuck you bitchass');

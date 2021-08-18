@@ -11,6 +11,7 @@ module.exports = {
         .setColor('RANDOM')
 
         .setAuthor('Help Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+        .setDescription('Bot is still under heavy development, refrain from using the commands a lot (Especially Economy commands).')
     
         .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
     
