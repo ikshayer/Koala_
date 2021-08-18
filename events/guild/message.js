@@ -47,7 +47,7 @@ if(/w+0+f+/i.test(message.content)) return message.delete();
 if(/a+w+0+f+/i.test(message.content)) return message.delete();
 if(/a+w+o+f+/i.test(message.content)) return message.delete();
 if(/a+w+0+/i.test(message.content)) return message.delete();
-if(/a+w+o++/i.test(message.content)) return message.delete();
+if(/a+w+o+/i.test(message.content)) return message.delete();
 
 if(message.content.toLowerCase().startsWith("aw") && message.content.toLowerCase().endsWith("o")){
     return message.delete()
