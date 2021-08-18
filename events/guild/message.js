@@ -42,18 +42,28 @@ for(var i = 0; i < insults.length; i++){
      }
 }
 
-if(/w+\s*(o\s*)+f+/i.test(message.content)) return message.delete();
-if(/w+\s*(0\s*)+f+/i.test(message.content)) return message.delete();
-if(/w+\s*(o\s*)*(0\s*)+(o\s*)*f+/i.test(message.content)) return message.delete();
-if(/w+\s*(0\s*)*(o\s*)+(0\s*)*f+/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*0+\s*f+/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*o+\s*f+/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*(0\s*)*(o\s*)+(0\s*)*f+/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*(o\s*)*(0\s*)+(o\s*)*f+/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*0+/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*o+/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*(o\s*)*(0\s*)+(o\s*)*/i.test(message.content)) return message.delete();
-if(/a+\s*w+\s*(0\s*)*(o\s*)+(0\s*)*/i.test(message.content)) return message.delete();
+/*
+const sentence = (/\w{1,}/g.exec(message.content));
+console.log(sentence.index);
+
+if(/w+o+f+/i.test(sentence)) return message.delete();
+*/
+
+    if(/w+\s*(o\s*)+f+/i.test(message.content)) return message.delete();
+    if(/w+\s*(0\s*)+f+/i.test(message.content)) return message.delete();
+    if(/w+\s*([()]\s*)*(0\s*)*+([()]\s*)*f+/i.test(message.content)) return message.delete();
+    if(/w+\s*([()]\s*)*(o\s*)*+([()]\s*)*f+/i.test(message.content)) return message.delete();
+    if(/w+\s*(o\s*)*([()]\s*)*+(o\s*)*f+/i.test(message.content)) return message.delete();
+    if(/w+\s*(o\s*)*(0\s*)+(o\s*)*f+/i.test(message.content)) return message.delete();
+    if(/w+\s*(0\s*)*(o\s*)+(0\s*)*f+/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*0+\s*f+/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*o+\s*f+/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*(0\s*)*(o\s*)+(0\s*)*f+/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*(o\s*)*(0\s*)+(o\s*)*f+/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*0+/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*o+/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*(o\s*)*(0\s*)+(o\s*)*/i.test(message.content)) return message.delete();
+    if(/a+\s*w+\s*(0\s*)*(o\s*)+(0\s*)*/i.test(message.content)) return message.delete();
 
 
 
