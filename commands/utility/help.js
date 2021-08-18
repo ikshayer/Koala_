@@ -81,8 +81,8 @@ module.exports = {
             {name: '`~ossas`', value:'Koala says the hardest African name without stuttering!'},
             {name: '`~sans`', value:'You get a GIF of master Sans (He is so epic OMG)!'},
             {name: '`~role kawaii`', value:'You get the Kawaii role for yourself!'},
-            {name: '`~reminder <time> <text> `', value: "You set up a reminder!"}
-
+            {name: '`~reminder <time> <text> `', value: "You set up a reminder!"},
+            {name: '`~ttt <Optional Player 2>`', value: "You can play TicTacToe with either others or the bot"}
 
         )
          
