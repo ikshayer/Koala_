@@ -131,19 +131,19 @@ module.exports = {
             
 
         }
-        if(args[0] === 'secret'){
+        if(args[0] === 'classified'){
 
             //The Help Embed Characteristics
         const secretEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
 
-        .setAuthor('Secret Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+        .setAuthor('Classified Weapons Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
     
         .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
     
       
         .addFields(
-            {name: '`!spam <user> <time in ms>`', value: "Command so notorious that it was sealed away!"},
+            {name: '`~spam <user> <time in ms>`', value: "Command so notorious that it was sealed away!"},
             
         )
          

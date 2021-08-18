@@ -2,6 +2,7 @@ require('dotenv').config();
 const TicTacToe = require('discord-tictactoe')
 const profileModel = require('../../models/profileScheme');
 const lawModel = require('../../models/lawScheme');
+const { Message } = require('discord.js');
 const cooldowns = new Map();
 module.exports = async (Discord, client, message)=>  {
 const prefix = process.env.PREFIX;
@@ -49,13 +50,27 @@ console.log(sentence.index);
 if(/w+o+f+/i.test(sentence)) return message.delete();
 */
 
-    if(/w+\s*(o\s*)+f+/i.test(message.content)) return message.delete();
+    if(/w+\s*(o\s*)+f+/i.test(message.content)){
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+        let MessageTarget = message.guild.members.cache.get(message.author.id); 
+
+        MessageTarget.roles.add(muteRole.id)    
+        MessageTarget.send(`GIT DUNKED ONNN, also ur muted for 5 min`)
+
+        message.delete();
+
+        setTimeout(function(){
+        message.author.roles.remove(muteRole.id)
+        
+        }, 300000);
+
+      return
+    }
+    
     if(/w+\s*(0\s*)+f+/i.test(message.content)) return message.delete();
-    if(/w+\s*([()]\s*)*(0\s*)*+([()]\s*)*f+/i.test(message.content)) return message.delete();
-    if(/w+\s*([()]\s*)*(o\s*)*+([()]\s*)*f+/i.test(message.content)) return message.delete();
-    if(/w+\s*(o\s*)*([()]\s*)*+(o\s*)*f+/i.test(message.content)) return message.delete();
     if(/w+\s*(o\s*)*(0\s*)+(o\s*)*f+/i.test(message.content)) return message.delete();
     if(/w+\s*(0\s*)*(o\s*)+(0\s*)*f+/i.test(message.content)) return message.delete();
+    if(/w+.o+.f+./i.test(message.content)) return message.delete();
     if(/a+\s*w+\s*0+\s*f+/i.test(message.content)) return message.delete();
     if(/a+\s*w+\s*o+\s*f+/i.test(message.content)) return message.delete();
     if(/a+\s*w+\s*(0\s*)*(o\s*)+(0\s*)*f+/i.test(message.content)) return message.delete();
@@ -65,7 +80,23 @@ if(/w+o+f+/i.test(sentence)) return message.delete();
     if(/a+\s*w+\s*(o\s*)*(0\s*)+(o\s*)*/i.test(message.content)) return message.delete();
     if(/a+\s*w+\s*(0\s*)*(o\s*)+(0\s*)*/i.test(message.content)) return message.delete();
 
+    if(/k+\s*a+\s*s+\s*h+\s*i+\s*r+\s*a/i.test(message.content)){
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
 
+        let MessageTarget = message.guild.members.cache.get(message.author.id); 
+        
+        MessageTarget.roles.add(muteRole.id)    
+        MessageTarget.send(`GIT DUNKED ONNN, also ur muted for 5 min`)
+
+        message.delete();
+
+        setTimeout(function(){
+        MessageTarget.roles.remove(muteRole.id)
+        
+        }, 300000);
+
+        return
+    }
 
 
 if(message.content.toLowerCase() === "shitty bot"){

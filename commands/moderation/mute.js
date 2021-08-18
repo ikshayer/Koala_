@@ -21,7 +21,6 @@ module.exports = {
                  let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
 
                  let memberTarget = message.guild.members.cache.get(target.id); 
-
                      if(memberTarget.roles.cache.has(mainRole.id)){
 
             
