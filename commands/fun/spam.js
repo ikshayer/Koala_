@@ -29,7 +29,7 @@ module.exports = {
 
          }
          else{
-         message.channel.send("This is a master command, only the owner can use it!");
+         message.channel.send("You Sussy Baka. This is a master command, only the owner can use it!");
          }
     }
 }
