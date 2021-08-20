@@ -19,7 +19,7 @@ module.exports = {
         message.channel.send(`<@${target.id}>`).then(m => {m.delete();
         });
 
-        }, 1000);
+        }, 2000);
         
         setTimeout(function(){
             clearInterval(spamInterval);

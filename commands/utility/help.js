@@ -142,8 +142,8 @@ module.exports = {
     
       
         .addFields(
-            {name: '`~spam <user> <time in ms>`', value: "Command so notorious that it was sealed away!"},
-            
+            {name: '`~spam <user> <time>`', value: "Command so notorious that it was sealed away!"},
+            {name: '`~ghostping <user> <time>`', value: "Ghostping someone"}
         )
          
 
