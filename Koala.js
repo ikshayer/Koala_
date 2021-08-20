@@ -22,7 +22,7 @@ client.on('ready', () => {
 
 
     });
-    client.user.setActivity("Women Are FAKE | ~help", { type: 'WATCHING' })
+    client.user.setActivity("Furries getting slain | ~help", { type: 'WATCHING' })
 
  })
 
