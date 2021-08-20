@@ -8,6 +8,8 @@ module.exports = {
 
         if(message.author.id == ownerID){
 
+         if(!args[1]) return message.channel.send('Please mention a duration')
+
          const target = message.mentions.users.first();
          const memberTarget = message.guild.members.cache.get(target.id);
 
