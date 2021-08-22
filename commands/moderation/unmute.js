@@ -8,26 +8,31 @@ module.exports = {
 
         if(message.member.permissions.has("MANAGE_MESSAGES")){
 
-            
+            const muteProfile = await muteModel.findOne(
+                {
+                guild: message.guild.id
+                })
+
+            if(!muteProfile) return message.channel.send("Please set up the Mute and Default roles, do ~help setup to learn more!")
         
-                 if(target){
+            if(target){
 
-                     let mainRole = message.guild.roles.cache.find(role => role.name === "Member");
-                     let muteRole = message.guild.roles.cache.find(role => role.name === "Muted");
+                let mainRoleID = muteProfile.defaultRole
+                let muteRoleID = muteProfile.muteRole
  
-                     let memberTarget = message.guild.members.cache.get(target.id);
+                let memberTarget = message.guild.members.cache.get(target.id);
 
-                     if(memberTarget.roles.cache.has(muteRole.id)){
+                if(memberTarget.roles.cache.has(muteRoleID)){
 
                      
 
-                     memberTarget.roles.remove(muteRole.id);
-                     memberTarget.roles.add(mainRole.id);
+                     memberTarget.roles.remove(muteRoleID);
+                     memberTarget.roles.add(mainRoleID);
                      message.channel.send(`<@${memberTarget.id}> has been unmuted!`);
 
                      }
                 
-                     else if(memberTarget.roles.cache.has(mainRole.id)){
+                     else if(memberTarget.roles.cache.has(mainRoleID)){
                      message.channel.send(`<@${memberTarget.id}> is not muted!`)
                      }
                  }
