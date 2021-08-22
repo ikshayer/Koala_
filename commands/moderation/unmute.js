@@ -1,7 +1,8 @@
+const muteModel = require("../../models/muteScheme")
 module.exports = {
     name: 'unmute',
     description: 'The Unmute Command',
-    execute(message, args, cmd, client){
+    async execute(message, args, cmd, client){
 
         const target = message.mentions.users.first();
 
