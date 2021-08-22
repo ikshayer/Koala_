@@ -18,15 +18,14 @@ module.exports ={
 
         const Embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setDescription(`???: Wake up Chosen one, Thou have been selected not by the Abyss but by the God that transcends all.
-            Thou are the vessel I seek, but Thou are yet not worthy. When the time arrives I shall come, my vessel.
-                 I shall see you ponder as thee select an occupation to squirm with the very little time thou have left in this world`)
-        .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/831559902426169354/Kai_of_the_Abyss2-export.png')
+        .setDescription(`Sigh, another person? Ugh take one of these and leave`)
         .addFields(
-            {name: `1️.`, value: 'Robber'},
-            {name: `2.`, value: 'Politician'},
-            {name: '3.', value: 'Hobo'},
-            {name: '4.', value: 'Cultist'},
+            {name: `Ring of the Witch of Greed`, value: 'No one can control Greed, Higher chances of winning the Casino'},
+            {name: `Memory of Hwan`, value: 'Memory of the One who had changed History, Increased Charisma'},
+            {name: `Darkness from the Abyss`, value: 'Embrace Darkness and deceive Truth, Higher chances of tricking the Abyss'},
+            {name: `Shattered Sword`, value: "Sword of a Hero who couldn't escape divine punishment, Does nothing"},
+            {name: `Veil of Tainted Tears`, value: 'Tears of the Men who defied God, Lower Luck'},
+            {name: `Juan`, value: "Juan"}
 
         )
 

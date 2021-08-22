@@ -22,6 +22,7 @@ module.exports = {
             {name: '**Responses**', value:'`~help response`', inline: true},
             {name: '**Music**', value: '`~help music`', inline: true},
             {name: '**Economy**', value: '`~help economy`', inline: true},
+            {name: '**Setup**', value: '`~help setup`', inline: true},
 
         )
          
@@ -164,12 +165,12 @@ module.exports = {
             .setAuthor('Music Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
             .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
             .addFields(
-                {name: '`~play <video>`', value: '**Play a song in a Music Channel!**'},
-                {name: '`~stop`', value: '**Makes the bot leave the Music Channel!**'},
-                {name: '`~skip`', value: '**Skips the current song!**'},
-                {name: '`~pause`', value: '**Pauses the current song!**'},
-                {name: '`~unpause`', value: '**Unpauses the current song!**'},
-                {name: '`~loop`', value: '**Loops the current song!**'}
+                {name: '`~play <video>`', value: 'Play a song in a Music Channel!'},
+                {name: '`~stop`', value: 'Makes the bot leave the Music Channel!'},
+                {name: '`~skip`', value: 'Skips the current song!'},
+                {name: '`~pause`', value: 'Pauses the current song!'},
+                {name: '`~unpause`', value: 'Unpauses the current song!'},
+                {name: '`~loop`', value: 'Loops the current song!'}
             )
             .setTimestamp()
             .setFooter("Koala is always watching!");
@@ -182,15 +183,31 @@ module.exports = {
             .setAuthor('Economy Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
             .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
             .addFields(
-                {name: '`~balance`', value: "**Check your own balance or another user's balance!**"},
-                {name: '`~deposit`', value: "**Deposit your money to the bank!**"},
-                {name: '`~withdraw`', value: "**Withdraw your money from the bank!**"},
-                {name: '`~pay`', value: "**Pay money to another user**"}
+                {name: '`~balance`', value: "Check your own balance or another user's balance!"},
+                {name: '`~deposit`', value: "Deposit your money to the bank!"},
+                {name: '`~withdraw`', value: "Withdraw your money from the bank!"},
+                {name: '`~pay`', value: "Pay money to another user"}
             )
             .setTimestamp()
             .setFooter("Koala is always watching!")
 
             return message.channel.send(economyEmbed);
+        }
+        if(args[0] === 'setup'){
+            const setupEmbed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setAuthor('Setup Hub', 'https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/810142018697035806/810389801458597928/koala.png')
+            .addFields(
+                {name: '`~setup mute defaultrole <RoleID>`', value: "Set up your server default role!"},
+                {name: '`~setup mute muterole <RoleID> `', value: "Set up your server mute role!"},
+
+            )
+            .setTimestamp()
+            .setFooter("Koala is always watching!")
+
+            return message.channel.send(setupEmbed)
+
         }
         
 
