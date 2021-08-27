@@ -69,6 +69,9 @@ if(/w+o+f+/i.test(sentence)) return message.delete();
     }
     
     if(/c+\s*.{0,3}\s*s+\s*.{0,3}\s*m/i.test(message.content)){
+
+        message.delete()
+
         let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
         let MessageTarget = message.guild.members.cache.get(message.author.id); 
 
@@ -85,6 +88,9 @@ if(/w+o+f+/i.test(sentence)) return message.delete();
       return
     };
     if(/c+.{0,3}h+.{0,3}a+.{0,3}(i|1)+.{0,3}n+.{0,3}\s*(s|5)+.{0,3}a+.{0,3}w+.{0,3}\s*m+.{0,3}a+.{0,3}n/i.test(message.content)){
+
+        message.delete()
+        
         let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
         let MessageTarget = message.guild.members.cache.get(message.author.id); 
 
