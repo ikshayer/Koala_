@@ -5,6 +5,8 @@ module.exports ={
     description: "To setup vital role information, useful for use in multiple servers",
     async execute(message, args, cmd, client, Discord){
 
+        if(message.member.permissions.has("ADMINISTRATOR")){
+
         if(!args[0]) return message.channel.send("Please enter valid setup type");
 
         if(args[0] === "mute"){
@@ -61,4 +63,8 @@ module.exports ={
             return message.channel.send("This setup type doesn't exist, do ~help setup to learn more!")
         }
     }
+    else{
+        return message.channel.send('You do not have administrator permissions!')
+    }
+   }
 }

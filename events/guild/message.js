@@ -2,6 +2,7 @@ require('dotenv').config();
 const TicTacToe = require('discord-tictactoe')
 const profileModel = require('../../models/profileScheme');
 const lawModel = require('../../models/lawScheme');
+const muteModel = require('../../models/muteScheme');
 const { Message } = require('discord.js');
 const cooldowns = new Map();
 module.exports = async (Discord, client, message)=>  {
@@ -67,6 +68,38 @@ if(/w+o+f+/i.test(sentence)) return message.delete();
       return
     }
     
+    if(/c+\s*.{0,3}\s*s+\s*.{0,3}\s*m/i.test(message.content)){
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+        let MessageTarget = message.guild.members.cache.get(message.author.id); 
+
+        MessageTarget.roles.add(muteRole.id)    
+        MessageTarget.send(`shut the fuck up`)
+
+        message.delete();
+
+        setTimeout(function(){
+        MessageTarget.roles.remove(muteRole.id)
+        
+        }, 300000);
+
+      return
+    };
+    if(/c+.{0,3}h+.{0,3}a+.{0,3}(i|1)+.{0,3}n+.{0,3}\s*(s|5)+.{0,3}a+.{0,3}w+.{0,3}\s*m+.{0,3}a+.{0,3}n/i.test(message.content)){
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+        let MessageTarget = message.guild.members.cache.get(message.author.id); 
+
+        MessageTarget.roles.add(muteRole.id)    
+        MessageTarget.send(`GIT DUNKED ONNN, also ur muted for 5 min`)
+
+        message.delete();
+
+        setTimeout(function(){
+        MessageTarget.roles.remove(muteRole.id)
+        
+        }, 300000);
+
+      return
+    };
     if(/w+\s*(0\s*)+f+/i.test(message.content)) return message.delete();
     if(/w+\s*(o\s*)*(0\s*)+(o\s*)*f+/i.test(message.content)) return message.delete();
     if(/w+\s*(0\s*)*(o\s*)+(0\s*)*f+/i.test(message.content)) return message.delete();
