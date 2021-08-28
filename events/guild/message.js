@@ -68,7 +68,7 @@ if(/w+o+f+/i.test(sentence)) return message.delete();
       return
     }
     
-    if(/c+\s*.{0,3}\s*s+\s*.{0,3}\s*m/i.test(message.content)){
+    if(/c+\s*.{0,3}\s*(s|5)+\s*.{0,3}\s*m/i.test(message.content)){
 
         message.delete()
 
