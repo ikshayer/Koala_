@@ -165,7 +165,7 @@ if(message.content.toLowerCase() === "thx koala" || message.content.toLowerCase(
     return message.channel.send("B-baka! :flushed:");
     }
     
-if(!message.content.startsWith("~~")) return;  
+if(message.content.startsWith("~~")) return;  
 
 if(!message.content.startsWith(prefix) || message.author.bot) return;
 
