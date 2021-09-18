@@ -130,10 +130,6 @@ if(message.content.toLowerCase() === "koala is bad"){                           
         return message.author.send('I will fucking kill you :)');
     }
 
-if(message.content.toLowerCase() === "hello"){
-    return message.channel.send('shut up loser');
-    }
-
 if(message.content.toLowerCase() === "takla is retarded"){ 
     return message.reply('VERY TRUE');
     }
