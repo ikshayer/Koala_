@@ -9,7 +9,7 @@ module.exports = {
 
         const target = message.mentions.users.first();
 
-        if(!message.author.id == [483181020451962880, 505287258891354122]) return message.channel.send("You Sussy Baka. This is a Master command, only the Owner can use it!");
+        if(!message.author.id == [483181020451962880, 505287258891354122, 522837965685129226]) return message.channel.send("You Sussy Baka. This is a Master command, only the Owner can use it!");
         if(!target) return message.channel.send("Please mention a user whom you wish to ghost ping!");
         if(!args[1]) return message.channel.send("Please enter a duration");
         if(isNaN(args[1])) return message.channel.send("Please enter a number");
