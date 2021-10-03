@@ -2,21 +2,20 @@
 module.exports = {
     name: 'ghostping',
     aliases: ['gp'],
+    cooldown: 10,
     description: "Ping someone and delete it so they don't know who pinged them!",
     async execute(message, args, cmd, client){
 
         message.delete()
 
-        if(spamInterval) return message.author.send("mf chill, he is still being ghostpinged")
-
         const target = message.mentions.users.first();
 
         if(!message.author.id == [483181020451962880, 505287258891354122, 522837965685129226]) return message.channel.send("You Sussy Baka. This is a Master command, only the Owner can use it!");
-        if(!target) return message.author.send("Please mention a user whom you wish to ghost ping!");
-        if(!args[1]) return message.author.send("Please enter a duration");
-        if(isNaN(args[1])) return message.author.send("Please enter a number");
-        if(args[1] < 0) return message.author.send("Please enter a positive number");
-        if(args[1] > 20) return message.author.send("Please enter a duration below 20 seconds");
+        if(!target) return message.channel.send("Please mention a user whom you wish to ghost ping!");
+        if(!args[1]) return message.channel.send("Please enter a duration");
+        if(isNaN(args[1])) return message.channel.send("Please enter a number");
+        if(args[1] < 0) return message.channel.send("Please enter a positive number");
+        if(args[1] > 20) return message.channel.send("Please enter a duration below 20 seconds");
 
         message.author.send(`The GhostPinging for <@${target.id}> has begun!`)
 
